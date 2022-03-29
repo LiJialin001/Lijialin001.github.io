@@ -74,13 +74,6 @@
 
   
   <url>
-    <loc>http://example.com/tags/UAV/</loc>
-    <lastmod>2022-03-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://example.com/tags/ARKit/</loc>
     <lastmod>2022-03-29</lastmod>
     <changefreq>weekly</changefreq>
@@ -94,17 +87,24 @@
     <priority>0.2</priority>
   </url>
   
+  <url>
+    <loc>http://example.com/tags/UAV/</loc>
+    <lastmod>2022-03-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
 
   
   <url>
-    <loc>http://example.com/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/</loc>
+    <loc>http://example.com/categories/iOS%E5%BC%80%E5%8F%91/</loc>
     <lastmod>2022-03-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://example.com/categories/iOS%E5%BC%80%E5%8F%91/</loc>
+    <loc>http://example.com/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/</loc>
     <lastmod>2022-03-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

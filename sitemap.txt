@@ -6,8 +6,8 @@ http://example.com/link/index.html
 http://example.com/categories/index.html
 http://example.com/tags/index.html
 http://example.com/
-http://example.com/tags/UAV/
 http://example.com/tags/ARKit/
 http://example.com/tags/%E6%9D%82/
-http://example.com/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/
+http://example.com/tags/UAV/
 http://example.com/categories/iOS%E5%BC%80%E5%8F%91/
+http://example.com/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/

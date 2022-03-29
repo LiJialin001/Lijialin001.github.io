@@ -6,33 +6,108 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-03-26T04:25:47.713Z</updated>
+  <updated>2022-03-29T13:09:23.220Z</updated>
   <id>http://example.com/</id>
   
   <author>
-    <name>JL King</name>
+    <name>A.S.</name>
     <email>lijialin_3737@icloud.com</email>
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Hello World</title>
-    <link href="http://example.com/2022/03/26/hello-world/"/>
-    <id>http://example.com/2022/03/26/hello-world/</id>
-    <published>2022-03-26T04:25:47.713Z</published>
-    <updated>2022-03-26T04:25:47.713Z</updated>
+    <title>四旋翼无人机的最基础</title>
+    <link href="http://example.com/2022/03/29/%E5%9B%9B%E6%97%8B%E7%BF%BC%E6%97%A0%E4%BA%BA%E6%9C%BA%E7%9A%84%E6%9C%80%E5%9F%BA%E7%A1%80/"/>
+    <id>http://example.com/2022/03/29/%E5%9B%9B%E6%97%8B%E7%BF%BC%E6%97%A0%E4%BA%BA%E6%9C%BA%E7%9A%84%E6%9C%80%E5%9F%BA%E7%A1%80/</id>
+    <published>2022-03-29T09:13:40.000Z</published>
+    <updated>2022-03-29T13:09:23.220Z</updated>
     
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="四旋翼无人机"><a href="#四旋翼无人机" class="headerlink" title="四旋翼无人机"></a>四旋翼无人机</h1><h2 id="三系统"><a href="#三系统" class="headerlink" title="三系统"></a>三系统</h2><h3 id="动力系统"><a href="#动力系统" class="headerlink" title="动力系统"></a>动力系统</h3><ul><li><p>旋翼</p><p>伯努利原理、反扭矩</p></li><li><p>电机</p><p>可采用PWM控制的有刷电机</p></li><li><p>电池</p></li></ul><h3 id="飞控"><a href="#飞控" class="headerlink" title="飞控"></a>飞控</h3><p>姿态的  <strong>采集</strong>  <strong>解算</strong>  <strong>控制</strong> </p><ul><li><p>嵌入式系统</p></li><li><p>无线通信</p></li><li><p>姿态传感器</p><blockquote><p>卡尔曼滤波</p></blockquote></li><li><p>气压计</p></li></ul><h3 id="操控系统"><a href="#操控系统" class="headerlink" title="操控系统"></a>操控系统</h3><h2 id="动力原理"><a href="#动力原理" class="headerlink" title="动力原理"></a>动力原理</h2><h3 id="反扭矩"><a href="#反扭矩" class="headerlink" title="反扭矩"></a>反扭矩</h3><p>对角线上的旋翼同方向旋转，两条对角线上产生的扭矩相互抵消，使得飞机机身保持稳定。</p><h3 id="六自由度运动"><a href="#六自由度运动" class="headerlink" title="六自由度运动"></a>六自由度运动</h3><h5 id="直线运动"><a href="#直线运动" class="headerlink" title="直线运动"></a>直线运动</h5><p>X、Y、Z三轴</p><h5 id="角运动"><a href="#角运动" class="headerlink" title="角运动"></a>角运动</h5><p>俯仰、滚转、偏航</p><h5 id="控制"><a href="#控制" class="headerlink" title="控制"></a>控制</h5><p>$f_1$ 、$f_2$ 、$f_3$ 、 $f_4$ 四个旋翼产生的升力控制飞机姿态</p><ul><li>$f_1$ + $f_2$ $\ne$ $f_3$ + $f_4$  控制俯仰 <strong>Pitch</strong></li><li>$f_1$ + $f_3$ $\ne$ $f_2$ + $f_4$  控制偏航 <strong>Yaw</strong></li><li>$f_2$ + $f_3$ $\ne$ $f_1$ + $f_4$ 控制滚转 <strong>Rool</strong></li></ul>]]></content>
     
     
       
       
-    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for</summary>
+    <summary type="html">&lt;h1 id=&quot;四旋翼无人机&quot;&gt;&lt;a href=&quot;#四旋翼无人机&quot; class=&quot;headerlink&quot; title=&quot;四旋翼无人机&quot;&gt;&lt;/a&gt;四旋翼无人机&lt;/h1&gt;&lt;h2 id=&quot;三系统&quot;&gt;&lt;a href=&quot;#三系统&quot; class=&quot;headerlink&quot; title=&quot;三系统</summary>
       
     
     
     
+    <category term="嵌入式开发" scheme="http://example.com/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/"/>
+    
+    
+    <category term="UAV" scheme="http://example.com/tags/UAV/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ARKit基础之位置追踪</title>
+    <link href="http://example.com/2022/03/29/ARKit%E5%9F%BA%E7%A1%80%E4%B9%8B%E4%BD%8D%E7%BD%AE%E8%BF%BD%E8%B8%AA/"/>
+    <id>http://example.com/2022/03/29/ARKit%E5%9F%BA%E7%A1%80%E4%B9%8B%E4%BD%8D%E7%BD%AE%E8%BF%BD%E8%B8%AA/</id>
+    <published>2022-03-29T09:05:12.000Z</published>
+    <updated>2022-03-29T09:06:14.573Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="位置追踪"><a href="#位置追踪" class="headerlink" title="位置追踪"></a>位置追踪</h2><h3 id="SLAM"><a href="#SLAM" class="headerlink" title="SLAM"></a>SLAM</h3><blockquote><p>即Simultaneous Localization And Mapping ，即时定位与建图。</p></blockquote><h4 id="定位与定姿"><a href="#定位与定姿" class="headerlink" title="定位与定姿"></a>定位与定姿</h4><p>主要采用<strong>视觉惯性里程计(VIO)</strong>和<strong>惯性导航系统</strong> </p><blockquote><p>VIO: Visual Inertial Odomentry</p></blockquote><p>综合使用VIO与惯性导航可以实时追踪用户的位置。VIO在刷新帧之间计算用户的位置<em>每秒30次以上，并行计算两次，至少以保证流畅</em> 。VIO与惯性导航系统并行计算，计算完成后使用卡尔曼滤波或者非线性优化等手段结合两个系统结过给出最终结果。</p><blockquote><p>6DOF为X、Y、Z加上俯仰、偏转、翻滚</p><p>惯性检测单元（IMU）：加速度计和陀螺仪</p></blockquote><div class="table-container"><table><thead><tr><th>惯性导航系统优点</th><th>精度高，每秒1000次运算</th></tr></thead><tbody><tr><td>惯性导航系统缺点</td><td>随与视觉系统复位时间而降低精度</td></tr></tbody></table></div>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;位置追踪&quot;&gt;&lt;a href=&quot;#位置追踪&quot; class=&quot;headerlink&quot; title=&quot;位置追踪&quot;&gt;&lt;/a&gt;位置追踪&lt;/h2&gt;&lt;h3 id=&quot;SLAM&quot;&gt;&lt;a href=&quot;#SLAM&quot; class=&quot;headerlink&quot; title=&quot;SLAM&quot;&gt;&lt;/a</summary>
+      
+    
+    
+    
+    <category term="iOS开发" scheme="http://example.com/categories/iOS%E5%BC%80%E5%8F%91/"/>
+    
+    
+    <category term="ARKit" scheme="http://example.com/tags/ARKit/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ARKit基础</title>
+    <link href="http://example.com/2022/03/29/ARKit%E5%9F%BA%E7%A1%80/"/>
+    <id>http://example.com/2022/03/29/ARKit%E5%9F%BA%E7%A1%80/</id>
+    <published>2022-03-29T07:43:06.000Z</published>
+    <updated>2022-03-29T09:00:38.474Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="ARKit-基础"><a href="#ARKit-基础" class="headerlink" title="ARKit 基础"></a>ARKit 基础</h1><h4 id="ARKit-AVFoundation-CoreMotion-CoreML"><a href="#ARKit-AVFoundation-CoreMotion-CoreML" class="headerlink" title="ARKit = AVFoundation + CoreMotion + CoreML"></a>ARKit = AVFoundation + CoreMotion + CoreML</h4><h4 id="图像-3D检测识别跟踪、人脸遮挡OK-、同时开前后摄像头、多人协作、"><a href="#图像-3D检测识别跟踪、人脸遮挡OK-、同时开前后摄像头、多人协作、" class="headerlink" title="图像/3D检测识别跟踪、人脸遮挡OK?、同时开前后摄像头、多人协作、"></a>图像/3D检测识别跟踪、人脸遮挡OK?、同时开前后摄像头、多人协作、</h4><h4 id="景深、地理位置锚点"><a href="#景深、地理位置锚点" class="headerlink" title="景深、地理位置锚点"></a>景深、地理位置锚点</h4><h4 id="不包含图形渲染API，使用RealityKit、SceneKit、SpriteKit、Metal等"><a href="#不包含图形渲染API，使用RealityKit、SceneKit、SpriteKit、Metal等" class="headerlink" title="不包含图形渲染API，使用RealityKit、SceneKit、SpriteKit、Metal等"></a>不包含图形渲染API，使用RealityKit、SceneKit、SpriteKit、Metal等</h4><h3 id="不足"><a href="#不足" class="headerlink" title="不足"></a>不足</h3><ul><li>在运动中做运动跟踪</li><li>跟踪动态环境（湖面）</li><li>热漂移（手机升温）</li><li>昏暗环境</li></ul><h3 id="ARSession"><a href="#ARSession" class="headerlink" title="ARSession"></a>ARSession</h3><h5 id="管理AR应用的状态和整个生命周期，ARKit-API-的主要入口"><a href="#管理AR应用的状态和整个生命周期，ARKit-API-的主要入口" class="headerlink" title="管理AR应用的状态和整个生命周期，ARKit API 的主要入口"></a>管理AR应用的状态和整个生命周期，ARKit API 的主要入口</h5><h3 id="ARAnchor（AR锚点）"><a href="#ARAnchor（AR锚点）" class="headerlink" title="ARAnchor（AR锚点）"></a>ARAnchor（AR锚点）</h3><h5 id="无法添加虚拟元素"><a href="#无法添加虚拟元素" class="headerlink" title="无法添加虚拟元素"></a>无法添加虚拟元素</h5><h5 id="将虚拟物体固定到AR场景中"><a href="#将虚拟物体固定到AR场景中" class="headerlink" title="将虚拟物体固定到AR场景中"></a>将虚拟物体固定到AR场景中</h5><h4 id="工作原理："><a href="#工作原理：" class="headerlink" title="工作原理："></a>工作原理：</h4><h5 id="视觉校准技术，使锚点姿态不随着时间变化"><a href="#视觉校准技术，使锚点姿态不随着时间变化" class="headerlink" title="视觉校准技术，使锚点姿态不随着时间变化"></a>视觉校准技术，使锚点姿态不随着时间变化</h5><h4 id="使用："><a href="#使用：" class="headerlink" title="使用："></a>使用：</h4><h5 id="1-在可跟踪对象上（平面、人脸等）创建锚点"><a href="#1-在可跟踪对象上（平面、人脸等）创建锚点" class="headerlink" title="1. 在可跟踪对象上（平面、人脸等）创建锚点"></a>1. 在可跟踪对象上（平面、人脸等）创建锚点</h5><h5 id="2-将虚拟物体链接到锚点"><a href="#2-将虚拟物体链接到锚点" class="headerlink" title="2. 将虚拟物体链接到锚点"></a>2. 将虚拟物体链接到锚点</h5><h4 id="使用场景："><a href="#使用场景：" class="headerlink" title="使用场景："></a>使用场景：</h4><ul><li>虚拟物体“焊接”到某物体上</li><li>姿态不变</li><li>几个虚拟物体相对位置不变、独立性</li><li>提高跟踪性</li></ul><h4 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h4><ul><li>尽可能重复使用锚点（独立锚点的对象可以 平移/旋转）</li><li>保持物体靠近锚点（1m）</li><li>分离未使用的锚点</li></ul><h4 id="种类："><a href="#种类：" class="headerlink" title="种类："></a>种类：</h4><ul><li>ARPlaneAnchor     平面</li><li>ARImageAnchor 2D图像</li><li>ARObjectAnchor 3D物体</li><li>ARFaceAnchor     人脸（姿态、表情）</li><li>ARBodyAnchor    人体</li><li>ARParticeipantAnchor  多人共享的</li><li>AREnvironmentProbeAnchor  环境光探头</li><li>ARMeshAnchor  使用LiDAR重建场景的场景网格的Anchor</li><li>ARGeoAnchor 地理位置信息</li></ul><h3 id="ARFrame（AR帧）"><a href="#ARFrame（AR帧）" class="headerlink" title="ARFrame（AR帧）"></a>ARFrame（AR帧）</h3><h5 id="相比于视频流包含了与AR有关的参数"><a href="#相比于视频流包含了与AR有关的参数" class="headerlink" title="相比于视频流包含了与AR有关的参数"></a>相比于视频流包含了与AR有关的参数</h5><h3 id="RealityKit"><a href="#RealityKit" class="headerlink" title="RealityKit"></a>RealityKit</h3><h5 id="专为AR设计"><a href="#专为AR设计" class="headerlink" title="专为AR设计"></a>专为AR设计</h5><h4 id="主要功能："><a href="#主要功能：" class="headerlink" title="主要功能："></a>主要功能：</h4><ul><li>渲染（反射、阴影）</li><li>动画（骨骼/变换 动画）</li><li>物理仿真</li><li>网络同步：整合了近距离通信框架</li><li>实体组件：避免了多继承（swift不支持）的维护问题</li><li>3D音效</li><li>其他很多功能自动处理</li></ul><h4 id="体系架构："><a href="#体系架构：" class="headerlink" title="体系架构："></a>体系架构：</h4><ul><li>ARView<ul><li>将渲染场景呈现给用户的一个窗口</li><li>都包含Scene实例</li><li>处理输入交互</li></ul></li><li>Scene<ul><li>放置实体对象的容器</li><li>创建ARView时自动创建</li><li>可通过ARView的属性访问</li></ul></li><li>AnchorEntity<ul><li>继承自Entity类</li><li>挂载了AnchorComponent组件</li></ul></li><li>Entity<ul><li>AR应用最基本组成元素</li><li>遵循Component协议、包含components集合，用于挂在各类组件</li><li>层次结构可以保存到文件中</li><li>预定义了8类实体</li></ul></li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;ARKit-基础&quot;&gt;&lt;a href=&quot;#ARKit-基础&quot; class=&quot;headerlink&quot; title=&quot;ARKit 基础&quot;&gt;&lt;/a&gt;ARKit 基础&lt;/h1&gt;&lt;h4 id=&quot;ARKit-AVFoundation-CoreMotion-CoreML&quot;&gt;&lt;a </summary>
+      
+    
+    
+    
+    <category term="iOS开发" scheme="http://example.com/categories/iOS%E5%BC%80%E5%8F%91/"/>
+    
+    
+    <category term="ARKit" scheme="http://example.com/tags/ARKit/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>开篇</title>
+    <link href="http://example.com/2022/03/29/%E5%BC%80%E7%AF%87/"/>
+    <id>http://example.com/2022/03/29/%E5%BC%80%E7%AF%87/</id>
+    <published>2022-03-29T07:23:07.000Z</published>
+    <updated>2022-03-29T07:36:01.922Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="第一篇博客"><a href="#第一篇博客" class="headerlink" title="第一篇博客"></a>第一篇博客</h1><p>没啥好说的，所以就不说。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;第一篇博客&quot;&gt;&lt;a href=&quot;#第一篇博客&quot; class=&quot;headerlink&quot; title=&quot;第一篇博客&quot;&gt;&lt;/a&gt;第一篇博客&lt;/h1&gt;&lt;p&gt;没啥好说的，所以就不说。&lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    
+    <category term="杂" scheme="http://example.com/tags/%E6%9D%82/"/>
     
   </entry>
   

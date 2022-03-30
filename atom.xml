@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-03-29T13:09:23.220Z</updated>
+  <updated>2022-03-30T04:23:03.907Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://example.com/2022/03/29/%E5%9B%9B%E6%97%8B%E7%BF%BC%E6%97%A0%E4%BA%BA%E6%9C%BA%E7%9A%84%E6%9C%80%E5%9F%BA%E7%A1%80/"/>
     <id>http://example.com/2022/03/29/%E5%9B%9B%E6%97%8B%E7%BF%BC%E6%97%A0%E4%BA%BA%E6%9C%BA%E7%9A%84%E6%9C%80%E5%9F%BA%E7%A1%80/</id>
     <published>2022-03-29T09:13:40.000Z</published>
-    <updated>2022-03-29T13:09:23.220Z</updated>
+    <updated>2022-03-30T04:23:03.907Z</updated>
     
     <content type="html"><![CDATA[<h1 id="四旋翼无人机"><a href="#四旋翼无人机" class="headerlink" title="四旋翼无人机"></a>四旋翼无人机</h1><h2 id="三系统"><a href="#三系统" class="headerlink" title="三系统"></a>三系统</h2><h3 id="动力系统"><a href="#动力系统" class="headerlink" title="动力系统"></a>动力系统</h3><ul><li><p>旋翼</p><p>伯努利原理、反扭矩</p></li><li><p>电机</p><p>可采用PWM控制的有刷电机</p></li><li><p>电池</p></li></ul><h3 id="飞控"><a href="#飞控" class="headerlink" title="飞控"></a>飞控</h3><p>姿态的  <strong>采集</strong>  <strong>解算</strong>  <strong>控制</strong> </p><ul><li><p>嵌入式系统</p></li><li><p>无线通信</p></li><li><p>姿态传感器</p><blockquote><p>卡尔曼滤波</p></blockquote></li><li><p>气压计</p></li></ul><h3 id="操控系统"><a href="#操控系统" class="headerlink" title="操控系统"></a>操控系统</h3><h2 id="动力原理"><a href="#动力原理" class="headerlink" title="动力原理"></a>动力原理</h2><h3 id="反扭矩"><a href="#反扭矩" class="headerlink" title="反扭矩"></a>反扭矩</h3><p>对角线上的旋翼同方向旋转，两条对角线上产生的扭矩相互抵消，使得飞机机身保持稳定。</p><h3 id="六自由度运动"><a href="#六自由度运动" class="headerlink" title="六自由度运动"></a>六自由度运动</h3><h5 id="直线运动"><a href="#直线运动" class="headerlink" title="直线运动"></a>直线运动</h5><p>X、Y、Z三轴</p><h5 id="角运动"><a href="#角运动" class="headerlink" title="角运动"></a>角运动</h5><p>俯仰、滚转、偏航</p><h5 id="控制"><a href="#控制" class="headerlink" title="控制"></a>控制</h5><p>$f_1$ 、$f_2$ 、$f_3$ 、 $f_4$ 四个旋翼产生的升力控制飞机姿态</p><ul><li>$f_1$ + $f_2$ $\ne$ $f_3$ + $f_4$  控制俯仰 <strong>Pitch</strong></li><li>$f_1$ + $f_3$ $\ne$ $f_2$ + $f_4$  控制偏航 <strong>Yaw</strong></li><li>$f_2$ + $f_3$ $\ne$ $f_1$ + $f_4$ 控制滚转 <strong>Rool</strong></li></ul>]]></content>
     

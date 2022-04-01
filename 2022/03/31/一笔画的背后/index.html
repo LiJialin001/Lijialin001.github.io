@@ -1,0 +1,408 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>一笔画的背后 | Wonderland</title><meta name="keywords" content="一笔画"><meta name="author" content="A.S.,lijialin_3737@icloud.com"><meta name="copyright" content="A.S."><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="数学让我们超越人类直觉，使我们能够探索人类无法触及的领域">
+<meta property="og:type" content="article">
+<meta property="og:title" content="一笔画的背后">
+<meta property="og:url" content="http://wonderland.plus/2022/03/31/%E4%B8%80%E7%AC%94%E7%94%BB%E7%9A%84%E8%83%8C%E5%90%8E/index.html">
+<meta property="og:site_name" content="Wonderland">
+<meta property="og:description" content="数学让我们超越人类直觉，使我们能够探索人类无法触及的领域">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://blogimgs-1310551706.cos.ap-beijing.myqcloud.com/Euler1.png">
+<meta property="article:published_time" content="2022-03-31T15:00:03.000Z">
+<meta property="article:modified_time" content="2022-04-01T05:24:41.900Z">
+<meta property="article:author" content="A.S.">
+<meta property="article:tag" content="图论">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blogimgs-1310551706.cos.ap-beijing.myqcloud.com/Euler1.png"><link rel="shortcut icon" href="/img/wonderland.png"><link rel="canonical" href="http://wonderland.plus/2022/03/31/%E4%B8%80%E7%AC%94%E7%94%BB%E7%9A%84%E8%83%8C%E5%90%8E/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?6bc38426f6cfe5b7568b2279783c094c";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '一笔画的背后',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-04-01 13:24:41'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.1.0"><link rel="alternate" href="/atom.xml" title="Wonderland" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/face.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">5</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">4</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div><div class="menus_item"><a class="site-page" href="/List/"><i class="fa-fw fas fa-circle-check"></i><span> ToDo</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://blogimgs-1310551706.cos.ap-beijing.myqcloud.com/Euler1.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Wonderland</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div><div class="menus_item"><a class="site-page" href="/List/"><i class="fa-fw fas fa-circle-check"></i><span> ToDo</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">一笔画的背后</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-03-31T15:00:03.000Z" title="发表于 2022-03-31 23:00:03">2022-03-31</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-04-01T05:24:41.900Z" title="更新于 2022-04-01 13:24:41">2022-04-01</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%8B%93%E6%89%91%E5%AD%A6-%E5%9B%BE%E8%AE%BA/">拓扑学/图论</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="一笔画的背后"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>今天排队论的老师讲起了图论hhh</p>
+<p>让我想起了小时候看的有关一笔画的东西，能不能一笔画成的规律倒是知道，但竟一直没想过如何证明证明。</p>
+<p>今天正好借着图论开课的机会重新想一想，然后就翻到了欧拉的证明，大道至简，清晰的思维值得记录。</p>
+<h2 id="开端"><a href="#开端" class="headerlink" title="开端"></a>开端</h2><p><strong>一笔画问题（Eulerian graph）</strong>是图论中一个著名的问题。一笔画问题起源于柯尼斯堡七桥问题。数学家欧拉在他1736年发表的论文《柯尼斯堡的七桥》中不仅解决了七桥问题，也提出了<strong>一笔画定理</strong>，解决了一笔画问题。</p>
+<p>欧拉的研究是图论的开端。</p>
+<p>莱布尼茨在1670年写给惠更斯的一封信中写道：</p>
+<blockquote>
+<p>我不满足于代数，因为它既不能给出最短的证明，也不能给出最漂亮的几何结构。因此，考虑到这一点，我认为我们还需要另一种分析，几何的或线性的，直接处理位置，就像代数处理数值那样。</p>
+</blockquote>
+<p>莱布尼茨的研究如今被称为 <strong>拓扑学</strong>，但作为一个数学领域在当时发展缓慢。正如高斯在1833年指出的</p>
+<blockquote>
+<p>莱布尼茨开创了位置几何学，但当时只有欧拉和范德蒙（对，就是范德蒙行列式那位）两位几何学家对其略知一二。一个半世纪后，我们才懂得并掌握了这一几何学。</p>
+</blockquote>
+<p>就是在高斯口中对几何学 <em>略知一二</em> 的欧拉的一篇论文，被誉为是西方现代图论的起点。</p>
+<p>在数学界，18世纪被誉为是欧拉的时代。令人惊讶的是，欧拉的近900本书、论文和其他作品中，有近一半是在1771年几乎完全失明后写的。（天才况且如此……</p>
+<p><img src="https://blogimgs-1310551706.cos.ap-beijing.myqcloud.com/euler.jpg" alt="欧拉"></p>
+<p>在1736年的 <em>Commentarii Academiae Scientiarum Imperialis Petropolitanae</em> 上，欧拉对现在著名的柯尼斯堡桥问题进行了数学描述：有没有可能计划在柯尼斯堡镇漫步一次，但是这座镇上的七座桥每座桥只能穿过一次？</p>
+<blockquote>
+<p>The problem, which I am told is widely known, is as follows: in K¨onigsberg in Prussia, there is an island A, called the Kneiphof ; the river which surrounds it is divided into two branches, as can be seen in Fig. [1.2], and these branches are crossed by seven bridges, a, b , c , d , e , f and g. Concerning these bridges, it was asked whether anyone could arrange a route in such a way that he would cross each bridge once and only once. I was told that some people asserted that this was impossible, while others were in doubt: but nobody would actually assert that it could be done. From this, I have formulated the general problem: whatever be the arrangement and division of the river into branches, and however many bridges there be, can one ﬁnd out whether or not it is possible to cross each bridge exactly once?</p>
+</blockquote>
+<p><img src="/../images/%E4%B8%80%E7%AC%94%E7%94%BB%E7%9A%84%E8%83%8C%E5%90%8E/7bridge.png" alt="七桥图示"></p>
+<p>像其他早期的图论工作一样，柯尼斯堡七桥问题看起来只不过是一个有趣的谜题。然而，从这种看似琐碎的起源，图论发展成为一种强大而深刻的数学理论，如今在物理、生物和社会科学中有着广泛的应用。</p>
+<h2 id="证明它！"><a href="#证明它！" class="headerlink" title="证明它！"></a>证明它！</h2><h4 id="简化"><a href="#简化" class="headerlink" title="简化"></a>简化</h4><p>在开始证明之前，值得注意的是欧拉将城市复杂的画卷（见封图）抽象成了简单的草图，在现代图论中，我们进行了进一步的简化（仅保留点和连接点的线）。</p>
+<h4 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h4><p>当然有一种大力出奇迹的方法可以证明这个问题，就是列出所有可能的情况，找不到符合题设的就OK了。但是这种方法有几点弊端：</p>
+<ul>
+<li>不适用于更复杂的情况（兄弟，真的遍历不完的</li>
+<li>不能抽象为理论！！（这很重要，琐碎变为伟大的关键</li>
+<li>会浪费注意力在那些根本不可能成为答案的路径上</li>
+</ul>
+<p>欧拉的整个方法依赖于一种特别方便的方式，用这种方式可以表示桥梁之间的关系。</p>
+<h4 id="问题表示方法"><a href="#问题表示方法" class="headerlink" title="问题表示方法"></a>问题表示方法</h4><p>我们使用大写字母A、B、C、D表示河流分隔的每个陆地区域（见上图）。如果一个旅行者通过a桥或b桥从A到B，将其写为AB</p>
+<blockquote>
+<p>AB中第一个字母指的是旅行者离开的区域，第二个字母指的是他过桥后到达的区域。</p>
+</blockquote>
+<p>因此，如果旅客离开B，穿过f桥进入D，则该路径用BD表示，两个路径AB和BD的组合用三个字母ABD表示，其中中间字母B表示第一条路径结束的区域和第二条路径开始的区域。如果旅行者又穿过桥g从D到C，我将用四个字母ABDC来表示这三个连续的路径</p>
+<blockquote>
+<p>这四个字母ABDC意味着旅行者从A开始，穿过B，再到D，最后到达C。</p>
+</blockquote>
+<p>由于每个陆地区域都被一条河的支流隔开，若要走过A、B、C、D 四个地方，旅行者必须穿过三座桥。类似地，四座桥的连续跨越将由五个字母表示。所以一般来说，无论旅行者跨越多少座桥，他的旅程都可以由一个比桥的数量大一个的字母来表示。因此，<strong>跨越七座桥需要八个字母来代表它</strong>。</p>
+<blockquote>
+<p>欧拉的这种表示方法使得图表本身对于解决问题变得不再必要，在现代图论中，我们用集合$V &#x3D; {v_0, v_1, \ldots , v_n}$ 和集合 $E &#x3D; {e_0, e_1, \ldots , e_m}$ 来表示，其中集合$V$ 代表顶点的集合， $E$ 代表连接顶点的边的集合。</p>
+</blockquote>
+<p>如果有一条回路可以遍历所有的顶点而每一条边只走过一次，那这样的路就被称作欧拉路径（包含所有顶点的迹），也是本题设想要寻找的路径。</p>
+<p>另有更严格的条件：欧拉回路（包含所有顶点的迹且首位相接）</p>
+<h4 id="存在吗？"><a href="#存在吗？" class="headerlink" title="存在吗？"></a>存在吗？</h4><p>因此，问题归结为找到由四个字母A、B、C、D组成的八个字母序列，其中A、B、C、D又重复。在寻找这样一个序列之前，先弄清楚是否有可能以这种方式排列字母（即找到题设路径），因为如果可以<strong>证明没有这样的排列存在</strong>，那么任何查找排列的工作都是毫无意义的。</p>
+<p>为了尝试这样的规则，我考虑了单个区域A，有a、b、c、d 四座桥与A关连。让我们先来看看通向A的单个桥：如果一个旅行者穿过这座桥，他必须在穿越前或者在穿越后到达A，因此在任何一种情况下，字母a都会在上述表示中出现一次。如果有三座桥（比如a、b和c）通向A，如果旅行者穿过这三座桥，那么在他的旅程中，无论他是否从a开始他的旅程，字母a都将出现两次。类似地，如果五座桥通向A，那么在通过所有桥的表示中，字母A会出现三次。</p>
+<p>因此，在柯尼斯堡七桥的问题的路线表示中，因为五座桥（a、b、c、d、e）通向A区，所以字母A必须出现三次。接下来，由于三座桥通向b，字母b必须出现两次；类似地，D必须出现两次，C也一样。因此，在一系列八个字母中，代表通过七座桥的路径，字母A必须出现三次，字母B、C和D各出现两次——但这不能在八个字母的序列中出现（$3+2+2+2&gt;8$）。因此，这样的旅程不能跨越柯尼斯堡的七座桥。</p>
+<p>更进一步，只要通往每个区域的桥梁数量是奇数，无论桥梁如何布置，都可以判断不可能一次旅行穿越每座桥梁而不重复。因为要满足条件的话所有字母必须出现的次数之和比桥的数量多一个，然而，像我们的例子中所发生的那样，事实上需要字母出现的数量大于桥梁的数量加一，那么这样的旅程永远无法完成。</p>
+<h4 id="怎样才会存在？"><a href="#怎样才会存在？" class="headerlink" title="怎样才会存在？"></a>怎样才会存在？</h4><p>如果通向 A 的桥的数目是偶数，那么就必须考虑是否在 A 地出发</p>
+<blockquote>
+<p>比如有两座桥 a、b 连接 A、B，那么在 A 出发的路径可以是 A B A ，否则是 B A B</p>
+</blockquote>
+<p>如果有<strong>四座</strong>桥通向A，如果旅行者从A出发，那么在整个旅程中，如果他要穿过每座桥一次，字母A必须出现三次；如果他在另一个区域开始行走，那么字母A将出现<strong>两次</strong>。</p>
+<p>如果有<strong>六座</strong>桥通向A，如果旅程从A开始，那么字母A将出现<strong>四次</strong>；如果旅行者没有从A开始，那么字母A只出现<strong>三次</strong>。</p>
+<p>所以，<strong>一般来说</strong>，如果桥的数量是偶数，那么如果行程不是从A开始，A的出现次数将是这个数字的一半，如果行程从A开始，A的出现次数将比桥的一半多一个。</p>
+<p>由于在任何旅程中，一个人只能从一个区域出发。这样就可以根据通往每个区域的桥梁数量，确定表示该区域的字母出现的数量。如果桥梁数量为奇数，为桥梁数量的一半加一；如果桥梁数量为偶数，则为其一半。最后，如果所有事件的总数等于桥的数量加上一，那么满足要求的行程将是可能的，并且必须从一个有奇数座桥通往它的区域开始。当然，如果得到的字母总数比桥梁数加一小一，那么旅程可以从一个桥梁数为偶数的区域开始，这样字母数将因此增加一。</p>
+<blockquote>
+<p>请注意，欧拉对“表示该区域的字母出现次数”的定义取决于通向每个区域（顶点）的桥（边）的数量是偶数还是奇数。在当代图论术语中，入射到顶点$V$上的边数被称为顶点$v$的“度”。</p>
+</blockquote>
+<p>因此，无论给出了什么样的桥梁布置，欧拉给出的以下方法将确定是否可以穿过每座桥梁：</p>
+<ul>
+<li><p>首先用字母 A、B、C 等表示被水隔开的各个区域。</p>
+</li>
+<li><p>然后，取桥的总数加上一，把结果写在下面的工作上面。</p>
+</li>
+<li><p>第三，把字母A、B、C等写在一列中，并在每一个旁边写下通向它的桥梁的数量。</p>
+</li>
+<li><p>第四，用星号表示那些有偶数桥的字母。</p>
+</li>
+<li><p>第五，在每一个偶数旁边写下一半的数字，在每一个奇数旁边写下一半的数字加一。</p>
+</li>
+<li><p>第六，把这些数字加起来，如果这个总和小于或等于上面写的数字，也就是桥的数量加上一，就得出结论，满足要求的旅程是可能的。</p>
+<blockquote>
+<p>必须记住，如果总和比上面写的数字小一，那么旅程必须从标有星号的区域之一开始，如果总和相等，则必须从未标有星号的区域开始。</p>
+</blockquote>
+<p>柯尼斯堡镇七桥问题的求解：</p>
+<p>七座桥，$7+1&#x3D;8$</p>
+<table>
+<thead>
+<tr>
+<th align="center">地区</th>
+<th align="center">相邻桥数</th>
+<th align="center">通过地区次数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">A</td>
+<td align="center">5</td>
+<td align="center">3</td>
+</tr>
+<tr>
+<td align="center">B</td>
+<td align="center">3</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center">C</td>
+<td align="center">3</td>
+<td align="center">3</td>
+</tr>
+<tr>
+<td align="center">D</td>
+<td align="center">3</td>
+<td align="center">2</td>
+</tr>
+</tbody></table>
+<p>显然 $3+2+2+2&gt;8$ 不满足题设</p>
+</li>
+</ul>
+<p>再举一个例子，假设有如下图的排布</p>
+<p><img src="/../images/%E4%B8%80%E7%AC%94%E7%94%BB%E7%9A%84%E8%83%8C%E5%90%8E/15bridge.png" alt="15桥"></p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center">16</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">A*</td>
+<td align="center">8</td>
+<td align="center">4</td>
+</tr>
+<tr>
+<td align="center">B*</td>
+<td align="center">4</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center">C*</td>
+<td align="center">4</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center">D*</td>
+<td align="center">3</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center">E</td>
+<td align="center">5</td>
+<td align="center">3</td>
+</tr>
+<tr>
+<td align="center">F*</td>
+<td align="center">6</td>
+<td align="center">3</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">16</td>
+</tr>
+</tbody></table>
+<p>按照上述规则，我们可以找到如下路径：</p>
+<p>​        <strong>EaFbBcFdAeFfCgAhCiDkAmEnApBoEiD</strong></p>
+<p>这就是本题中的“欧拉路径”</p>
+<h3 id="更进一步"><a href="#更进一步" class="headerlink" title="更进一步"></a>更进一步</h3><p>尽管上述方法已经可以在复杂的情况下找到欧拉路径（如果存在的话），但欧拉并没有止步于此，他找到了一种更抽象更简洁的方法来表达这一思想。</p>
+<p>首先，观察到字母A、B、C等旁边写的桥的数量加起来是桥总数的两倍。原因是，在计算中，每一座通往某一特定区域的桥梁都会被计算两次，每一座桥梁连接的两个区域各计算一次。</p>
+<p>因此，通往每个区域的桥梁总数必须为偶数（其一半等于桥梁数量）。进一步，字母A、B、C等的一些桥的数量中只有一个是奇数，或者三个是奇数，或者五个，等等，这是不可能的。因此，如果字母A、B、C等的一些桥的数量是奇数，那么这些区域的数量一定是偶数。</p>
+<blockquote>
+<p>在七桥问题中，字母A、B、C和D都有奇数个桥相邻，在最后一个例子中，只有两个数字是奇数，即D和E。</p>
+</blockquote>
+<p>上述结果也被称为“握手定理”，源于计算社交聚会期间发生的握手次数的等效问题。在社交聚会上，每个在场的人与其他在场的人握手一次。握手定理的现代表述是：“<strong>有限图中所有顶点的度之和等于图中边数的两倍。</strong>” 或 “<strong>每个有限图包含偶数个奇数度的顶点。</strong>”</p>
+<p>由于字母 A、B、C 等所相邻的桥数的总和等于桥数的两倍。很明显，如果该总和增加2，然后再除以2，将得到我们所想要的数字（桥数加一）。因此，如果字母 A、B、C 等的所有数字（第二列）都是偶数，并且取其中的一半来获得第三列中的数字，那么这些数字的总和将比上面写的数字（桥数加一）少一个，而我们开始行走的地方需要加一，则无论是什么地方开始旅程，都可以找到符合要求的路径。在七桥问题中，如果旅行者两次穿过每座桥，就会发生这种情况（每座桥都可以被视为不同的两座）。</p>
+<p>此外，如果字母 A、B、C 等所相邻的桥数中只有两个是奇数，其余的是偶数，那么，如果旅程从一个有奇数座桥梁通往的区域开始，那么得到符合条件的路径是可能的。因为，如果偶数减半，奇数增加一，它们的一半之和将比桥的数量大一，因此等于上面写的数字。从这可以进一步看出，如果有四，六，八……个奇数出现在第二列，那么第三列中的数字之和将比桥数大2，3，4……甚至更多。那么找到符合题设的路径将是不可能的。</p>
+<p>至此，得到了为人们所熟知的结论，即：</p>
+<blockquote>
+<p>无论桥如何排列，如果有两个以上的地区有奇数座桥梁通往，那么找到符合要求的路径是不可能的。<br>如果恰好有两个区域的桥梁数量是奇数，那么如果从这两个区域中的任何一个开始，找到符合要求的路径都是可能的。<br>如果没有奇数座桥梁通往的区域，那么可以从任何区域开始完成所需的旅程。</p>
+</blockquote>
+<h3 id="找到路径！"><a href="#找到路径！" class="headerlink" title="找到路径！"></a>找到路径！</h3><p>如果知道了在合适条件下必然存在符合题设路径，如何找到呢？ 关于这个问题，欧拉给出了答案（给了，但是又没给hhh）</p>
+<p>欧拉原话：</p>
+<blockquote>
+<p>I do not therefore think it worthwhile to give any further details concerning the ﬁnding of the routes.</p>
+</blockquote>
+<p>理由是对于一个区域，我们可以成对的忽视桥梁，这样结构就被大大简化，所以便可以轻而易举的找到路径。</p>
+<h3 id="现代表述"><a href="#现代表述" class="headerlink" title="现代表述"></a>现代表述</h3><p>要得到欧拉主要结果的完整现代陈述，我们需要几个定义</p>
+<p>连通：</p>
+<blockquote>
+<p>对于图 G 的两个顶点 u 和 v ，如果在中存在一条路，记为 (u,v) 路，则称 u 和 v 是连通的。如果图 G 不连通，则它每一个分支是连通的</p>
+</blockquote>
+<p>根据这一定义，Euler论文的主要结果如下：</p>
+<h5 id="Theorem：有限图G包含Euler回路当且仅当G是连通的且不包含奇数度顶点。"><a href="#Theorem：有限图G包含Euler回路当且仅当G是连通的且不包含奇数度顶点。" class="headerlink" title="Theorem：有限图G包含Euler回路当且仅当G是连通的且不包含奇数度顶点。"></a>Theorem：有限图G包含Euler回路当且仅当G是连通的且不包含奇数度顶点。</h5><h5 id="Corollary：有限图G包含Euler路径当且仅当G是连通的且至多包含两个奇数度顶点。"><a href="#Corollary：有限图G包含Euler路径当且仅当G是连通的且至多包含两个奇数度顶点。" class="headerlink" title="Corollary：有限图G包含Euler路径当且仅当G是连通的且至多包含两个奇数度顶点。"></a>Corollary：有限图G包含Euler路径当且仅当G是连通的且至多包含两个奇数度顶点。</h5><p>当然，欧拉的证明与现代证明有所不同，但欧拉的这项工作为几何学特别是图论翻开了新的一页。</p>
+<p>就这样，<em><strong>是否可以不重复的走遍七座桥</strong></em> 这样一个看似“没啥用”的问题，经过百年的发展，如今成为了可以许多学科问题的便利工具。</p>
+<p>所以，多做点“没用的事”，挺好。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:lijialin_3737@icloud.com">A.S.</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://wonderland.plus/2022/03/31/%E4%B8%80%E7%AC%94%E7%94%BB%E7%9A%84%E8%83%8C%E5%90%8E/">http://wonderland.plus/2022/03/31/%E4%B8%80%E7%AC%94%E7%94%BB%E7%9A%84%E8%83%8C%E5%90%8E/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://wonderland.plus" target="_blank">Wonderland</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%9B%BE%E8%AE%BA/">图论</a></div><div class="post_share"><div class="social-share" data-image="https://blogimgs-1310551706.cos.ap-beijing.myqcloud.com/Euler1.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2022/03/29/%E5%9B%9B%E6%97%8B%E7%BF%BC%E6%97%A0%E4%BA%BA%E6%9C%BA%E7%9A%84%E6%9C%80%E5%9F%BA%E7%A1%80/"><img class="next-cover" src="https://blogimgs-1310551706.cos.ap-beijing.myqcloud.com/wrj.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">四旋翼无人机的最基础</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="lv-container" data-id="city" data-uid="MTAyMC81NTg3My8zMjMzNw=="></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/face.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">A.S.</div><div class="author-info__description"></div></div><div class="card-info-data is-center"><div class="card-info-data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">5</div></a></div><div class="card-info-data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">4</div></a></div><div class="card-info-data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Lijialin001"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/Lijialin001" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:lijialin_3737@icloud.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Welcome to Wonderland</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%80%E7%AB%AF"><span class="toc-number">1.</span> <span class="toc-text">开端</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%81%E6%98%8E%E5%AE%83%EF%BC%81"><span class="toc-number">2.</span> <span class="toc-text">证明它！</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AE%80%E5%8C%96"><span class="toc-number">2.0.1.</span> <span class="toc-text">简化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%B9%E6%B3%95"><span class="toc-number">2.0.2.</span> <span class="toc-text">方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E8%A1%A8%E7%A4%BA%E6%96%B9%E6%B3%95"><span class="toc-number">2.0.3.</span> <span class="toc-text">问题表示方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%98%E5%9C%A8%E5%90%97%EF%BC%9F"><span class="toc-number">2.0.4.</span> <span class="toc-text">存在吗？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%80%8E%E6%A0%B7%E6%89%8D%E4%BC%9A%E5%AD%98%E5%9C%A8%EF%BC%9F"><span class="toc-number">2.0.5.</span> <span class="toc-text">怎样才会存在？</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9B%B4%E8%BF%9B%E4%B8%80%E6%AD%A5"><span class="toc-number">2.1.</span> <span class="toc-text">更进一步</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%BE%E5%88%B0%E8%B7%AF%E5%BE%84%EF%BC%81"><span class="toc-number">2.2.</span> <span class="toc-text">找到路径！</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%8E%B0%E4%BB%A3%E8%A1%A8%E8%BF%B0"><span class="toc-number">2.3.</span> <span class="toc-text">现代表述</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Theorem%EF%BC%9A%E6%9C%89%E9%99%90%E5%9B%BEG%E5%8C%85%E5%90%ABEuler%E5%9B%9E%E8%B7%AF%E5%BD%93%E4%B8%94%E4%BB%85%E5%BD%93G%E6%98%AF%E8%BF%9E%E9%80%9A%E7%9A%84%E4%B8%94%E4%B8%8D%E5%8C%85%E5%90%AB%E5%A5%87%E6%95%B0%E5%BA%A6%E9%A1%B6%E7%82%B9%E3%80%82"><span class="toc-number">2.3.0.1.</span> <span class="toc-text">Theorem：有限图G包含Euler回路当且仅当G是连通的且不包含奇数度顶点。</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Corollary%EF%BC%9A%E6%9C%89%E9%99%90%E5%9B%BEG%E5%8C%85%E5%90%ABEuler%E8%B7%AF%E5%BE%84%E5%BD%93%E4%B8%94%E4%BB%85%E5%BD%93G%E6%98%AF%E8%BF%9E%E9%80%9A%E7%9A%84%E4%B8%94%E8%87%B3%E5%A4%9A%E5%8C%85%E5%90%AB%E4%B8%A4%E4%B8%AA%E5%A5%87%E6%95%B0%E5%BA%A6%E9%A1%B6%E7%82%B9%E3%80%82"><span class="toc-number">2.3.0.2.</span> <span class="toc-text">Corollary：有限图G包含Euler路径当且仅当G是连通的且至多包含两个奇数度顶点。</span></a></li></ol></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/03/31/%E4%B8%80%E7%AC%94%E7%94%BB%E7%9A%84%E8%83%8C%E5%90%8E/" title="一笔画的背后"><img src="https://blogimgs-1310551706.cos.ap-beijing.myqcloud.com/Euler1.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="一笔画的背后"/></a><div class="content"><a class="title" href="/2022/03/31/%E4%B8%80%E7%AC%94%E7%94%BB%E7%9A%84%E8%83%8C%E5%90%8E/" title="一笔画的背后">一笔画的背后</a><time datetime="2022-03-31T15:00:03.000Z" title="发表于 2022-03-31 23:00:03">2022-03-31</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/03/29/%E5%9B%9B%E6%97%8B%E7%BF%BC%E6%97%A0%E4%BA%BA%E6%9C%BA%E7%9A%84%E6%9C%80%E5%9F%BA%E7%A1%80/" title="四旋翼无人机的最基础"><img src="https://blogimgs-1310551706.cos.ap-beijing.myqcloud.com/wrj.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="四旋翼无人机的最基础"/></a><div class="content"><a class="title" href="/2022/03/29/%E5%9B%9B%E6%97%8B%E7%BF%BC%E6%97%A0%E4%BA%BA%E6%9C%BA%E7%9A%84%E6%9C%80%E5%9F%BA%E7%A1%80/" title="四旋翼无人机的最基础">四旋翼无人机的最基础</a><time datetime="2022-03-29T09:13:40.000Z" title="发表于 2022-03-29 17:13:40">2022-03-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/03/29/ARKit%E5%9F%BA%E7%A1%80%E4%B9%8B%E4%BD%8D%E7%BD%AE%E8%BF%BD%E8%B8%AA/" title="ARKit基础之位置追踪"><img src="https://blogimgs-1310551706.cos.ap-beijing.myqcloud.com/arkithero.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="ARKit基础之位置追踪"/></a><div class="content"><a class="title" href="/2022/03/29/ARKit%E5%9F%BA%E7%A1%80%E4%B9%8B%E4%BD%8D%E7%BD%AE%E8%BF%BD%E8%B8%AA/" title="ARKit基础之位置追踪">ARKit基础之位置追踪</a><time datetime="2022-03-29T09:05:12.000Z" title="发表于 2022-03-29 17:05:12">2022-03-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/03/29/ARKit%E5%9F%BA%E7%A1%80/" title="ARKit基础"><img src="https://blogimgs-1310551706.cos.ap-beijing.myqcloud.com/arkithero.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="ARKit基础"/></a><div class="content"><a class="title" href="/2022/03/29/ARKit%E5%9F%BA%E7%A1%80/" title="ARKit基础">ARKit基础</a><time datetime="2022-03-29T07:43:06.000Z" title="发表于 2022-03-29 15:43:06">2022-03-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/03/29/%E5%BC%80%E7%AF%87/" title="开篇"><img src="https://blogimgs-1310551706.cos.ap-beijing.myqcloud.com/wonderful.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="开篇"/></a><div class="content"><a class="title" href="/2022/03/29/%E5%BC%80%E7%AF%87/" title="开篇">开篇</a><time datetime="2022-03-29T07:23:07.000Z" title="发表于 2022-03-29 15:23:07">2022-03-29</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://blogimgs-1310551706.cos.ap-beijing.myqcloud.com/Euler1.png')"><div id="footer-wrap"><div class="copyright">&copy;2022 By A.S.</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Welcome to wonderland by A.S.</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.2
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container:not\([display]\)').forEach(node => {
+            const target = node.parentNode
+            if (target.nodeName.toLowerCase() === 'li') {
+              target.parentNode.classList.add('has-jax')
+            } else {
+              target.classList.add('has-jax')
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script><script>function loadLivere () {
+  if (typeof LivereTower === 'object') {
+    window.LivereTower.init()
+  }
+  else {
+    (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+  }
+}
+
+if ('Livere' === 'Livere' || !false) {
+  if (false) btf.loadComment(document.getElementById('lv-container'), loadLivere)
+  else loadLivere()
+}
+else {
+  function loadOtherComment () {
+    loadLivere()
+  }
+}</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

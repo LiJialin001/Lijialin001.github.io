@@ -6,7 +6,7 @@
   <link href="http://wonderland.plus/atom.xml" rel="self"/>
   
   <link href="http://wonderland.plus/"/>
-  <updated>2022-04-03T16:55:51.890Z</updated>
+  <updated>2022-04-04T16:53:12.711Z</updated>
   <id>http://wonderland.plus/</id>
   
   <author>
@@ -15,6 +15,78 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Coding Anywhere</title>
+    <link href="http://wonderland.plus/posts/50883/"/>
+    <id>http://wonderland.plus/posts/50883/</id>
+    <published>2022-04-04T10:18:22.000Z</published>
+    <updated>2022-04-04T16:53:12.711Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>到处编程的身影，挺有趣的，就记录一下</p><hr><h2 id="我都想不到，学的第一门编程语言是Octave🤣"><a href="#我都想不到，学的第一门编程语言是Octave🤣" class="headerlink" title="我都想不到，学的第一门编程语言是Octave🤣"></a>我都想不到，学的第一门编程语言是Octave🤣</h2><p>大一自习的时候，在写吴恩达机器学习课程的编程作业，从此coding成为了我大学生活的一部分</p><blockquote><p>Octave 免费版的Matlab，除了图形化界面拉垮，其他都可。但鉴于是免费开源的，已经很不错了</p></blockquote><p><img src="https://blogimgs-1310551706.cos.ap-beijing.myqcloud.com//octaveML.jpeg" alt="第一次写出线性回归hhh"></p><hr><h2 id="信号课的早八，而我在……"><a href="#信号课的早八，而我在……" class="headerlink" title="信号课的早八，而我在……"></a>信号课的早八，而我在……</h2><p>本来以为是在写微北洋，仔细一看是之前的 <strong>DDL Helper</strong> 哈哈，好像当时是有比赛比较急，否则我一般是听课的（开始大言不惭了hhh</p><p>从模糊的背景看得出是在讲取样函数时域的变换哈（或者是脉冲宽度&#x2F;周期 和 频谱的关系也有可能，看是第几章了</p><p><img src="https://blogimgs-1310551706.cos.ap-beijing.myqcloud.com//morning.jpeg" alt="DDL Helper!"></p><hr><h2 id="熬夜……这样的夜晚太多了"><a href="#熬夜……这样的夜晚太多了" class="headerlink" title="熬夜……这样的夜晚太多了"></a>熬夜……这样的夜晚太多了</h2><p><img src="https://blogimgs-1310551706.cos.ap-beijing.myqcloud.com//codenight.jpeg" alt="独自熬夜的夜晚"></p><hr><h2 id="高铁上也打过代码，然后晕车"><a href="#高铁上也打过代码，然后晕车" class="headerlink" title="高铁上也打过代码，然后晕车"></a>高铁上也打过代码，然后晕车</h2><p>晕车的症状一直持续到了回家的第二天 bbzl</p><p>再也不在车上看电脑了</p><p><img src="https://blogimgs-1310551706.cos.ap-beijing.myqcloud.com//traincode.jpeg" alt="高铁上的coding，晕了，没留下Mac的图hh"></p><hr><h3 id="持续记录中📝……"><a href="#持续记录中📝……" class="headerlink" title="持续记录中📝……"></a>持续记录中📝……</h3>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot; cla</summary>
+      
+    
+    
+    
+    <category term="生活" scheme="http://wonderland.plus/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+    <category term="Code" scheme="http://wonderland.plus/tags/Code/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>早期驯服小车记录</title>
+    <link href="http://wonderland.plus/posts/13444/"/>
+    <id>http://wonderland.plus/posts/13444/</id>
+    <published>2022-04-04T10:14:49.000Z</published>
+    <updated>2022-04-04T16:18:51.652Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot; cla</summary>
+      
+    
+    
+    
+    <category term="嵌入式开发" scheme="http://wonderland.plus/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/"/>
+    
+    
+    <category term="循迹小车" scheme="http://wonderland.plus/tags/%E5%BE%AA%E8%BF%B9%E5%B0%8F%E8%BD%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>爱的诗</title>
+    <link href="http://wonderland.plus/posts/26780/"/>
+    <id>http://wonderland.plus/posts/26780/</id>
+    <published>2022-04-04T10:13:44.000Z</published>
+    <updated>2022-04-04T16:17:57.661Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>记录一些古诗，<del>装一下</del> 文艺青年</p><hr><h2 id="正月十五夜"><a href="#正月十五夜" class="headerlink" title="正月十五夜"></a><strong>正月十五夜</strong></h2><p><strong>【唐代】苏味道</strong></p><p>火树银花合，星桥铁锁开。</p><p>暗尘随马去，明月逐人来。</p><p>游伎皆秾李，行歌尽落梅。</p><p>金吾不禁夜，玉漏莫相催。</p><blockquote><p>在唐代（至少是苏味道这个时代）我国一直施行 <strong>宵禁</strong> ，但唯独正月十五（加上十四、十六）这一天的夜晚允许百姓自由活动（铁锁开）。</p><p>火树银花这里特指上元节的灯景</p><p>星桥：天津三桥之一hhh</p><p>这一天会有俊男俊女走上街头丢手绢已示好感hhh</p></blockquote><h5 id="最爱：暗尘随马去，明月逐人来。"><a href="#最爱：暗尘随马去，明月逐人来。" class="headerlink" title="最爱：暗尘随马去，明月逐人来。"></a>最爱：暗尘随马去，明月逐人来。</h5><hr>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot; cla</summary>
+      
+    
+    
+    
+    <category term="诗词" scheme="http://wonderland.plus/categories/%E8%AF%97%E8%AF%8D/"/>
+    
+    
+    <category term="文艺青年" scheme="http://wonderland.plus/tags/%E6%96%87%E8%89%BA%E9%9D%92%E5%B9%B4/"/>
+    
+  </entry>
   
   <entry>
     <title>《A Mathematical Theory of Communication》译文及解读</title>

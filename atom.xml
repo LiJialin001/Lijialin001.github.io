@@ -6,7 +6,7 @@
   <link href="http://wonderland.plus/atom.xml" rel="self"/>
   
   <link href="http://wonderland.plus/"/>
-  <updated>2022-04-06T16:01:20.660Z</updated>
+  <updated>2022-10-07T03:25:19.195Z</updated>
   <id>http://wonderland.plus/</id>
   
   <author>
@@ -15,6 +15,96 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Blockchain随手记</title>
+    <link href="http://wonderland.plus/posts/44436/"/>
+    <id>http://wonderland.plus/posts/44436/</id>
+    <published>2022-10-06T17:26:48.000Z</published>
+    <updated>2022-10-07T03:25:19.195Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="核心idea"><a href="#核心idea" class="headerlink" title="核心idea"></a>核心idea</h1><p>通过后一个区块对前一个区块的引用，并以加密技术保证了区块链不可修改</p><h1 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h1><p>分布式的，不可篡改的数据库，可验证、可信任。</p><h1 id="比特币"><a href="#比特币" class="headerlink" title="比特币"></a>比特币</h1><p>基于数学加密原理构建的不可伪造的货币系统，使用区块链技术实现了数字货币的可信支付</p><p><a href="https://bitcoin.org/bitcoin.pdf">第一篇paper&amp;比特币白皮书</a></p><p>比特币通过区块链技术，把整个账本全部公开，人手一份，全网相同，修改账本不会被其他人承认</p><p>无需中央信任机构，密码学理论保证货币防伪造</p><h2 id="区块链原理"><a href="#区块链原理" class="headerlink" title="区块链原理"></a>区块链原理</h2><p><strong>一个不断增长的全网总账本</strong></p><p>每个完全节点都拥有完整的区块链，节点总是信任最长的区块链，So，伪造区块链需要拥有超过51%的全网算力</p><p>区块链是由区块s构成的有序链表，每个区块都记录了一系列交易，并且，每个区块都指向前一个区块（通过记录上一个区块的哈希），从而形成一个链条，每个区块都有一个唯一的哈希标识。每一个区块还有一个Merkle哈希用来确保该区块的所有交易记录无法被篡改。</p><h2 id="P2P交易原理"><a href="#P2P交易原理" class="headerlink" title="P2P交易原理"></a>P2P交易原理</h2><p>无需信任中介参与的P2P（Peer-to-peer）交易</p><h3 id="数字签名"><a href="#数字签名" class="headerlink" title="数字签名"></a>数字签名</h3><p>每个人都可以自己生成一个秘钥对，包含一个私钥和一个公钥：</p><blockquote><p>私钥被称为Secret Key或者Private Key，严格保密，不能泄漏给其他人</p></blockquote><blockquote><p>公钥被称为Public Key，可以公开给任何人</p></blockquote><p>私钥签签名，公钥用于他人验证</p><blockquote><p>常用的数字签名算法有：RSA算法，DSA算法和ECDSA算法。</p><p>比特币采用的签名算法是椭圆曲线签名算法：ECDSA，使用的椭圆曲线是一个已经定义好的标准曲线<strong>secp256k1</strong> </p><p>私钥本质上就是一个1～2256的随机数，公钥是由私钥根据ECDSA算法推算出来的，通过私钥可以很容易推算出公钥，所以不必保存公钥，但通过公钥无法反推私钥，只能暴力破解</p></blockquote><h3 id="私钥"><a href="#私钥" class="headerlink" title="私钥"></a>私钥</h3><p>比特币中，私钥本质上就是一个256位的随机整数</p><h1 id="以太坊"><a href="#以太坊" class="headerlink" title="以太坊"></a>以太坊</h1><p>支持智能合约的区块链平台</p><p>实现了一个图灵完备的脚本语言，运行在EVM（Ethereum Virtual Machine，以太坊虚拟机）中，任何人都可以编写合法的脚本来执行任意逻辑（有限制）</p><h2 id="智能合约"><a href="#智能合约" class="headerlink" title="智能合约"></a>智能合约</h2><p>一种运行在区块链上的程序，保证在区块链网络的每一个节点中运行的结果完全相同。</p><p>为了消除程序运行的不确定性，智能合约有很多限制，例如，不支持浮点运算（因为浮点数有不同的表示方法，不同架构的CPU运行的浮点计算精度都不同），不支持随机数，不支持从外部读取输入等。</p><p>最常用的开发智能合约的语言是以太坊专门为其定制的<a href="https://docs.soliditylang.org/">Solidity</a>语言。</p><ul><li><p>智能合约部署在以太坊的区块链时，会根据部署者的地址和该地址的nonce分配一个合约地址，</p></li><li><p>合约地址和账户地址的格式没有区别，但<strong>合约地址没有私钥</strong>，没有人能直接操作该地址的合约数据。</p></li><li><p>要调用合约，唯一的方法是<strong>调用合约的公共函数</strong>  So 合约不能主动执行，只能被外部账户发起调用</p></li><li><p>合约内部也可以存储数据（存储在合约地址关联的存储上） So 合约具有状态，可实现比较复杂的逻辑</p></li><li><p>合约在执行的过程中，可以调用其他已部署的合约</p></li></ul><h3 id="Solidity"><a href="#Solidity" class="headerlink" title="Solidity"></a>Solidity</h3><p>大括号语言</p><p>静态类型，支持继承、库和复杂的用户定义类型等特性</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot; cla</summary>
+      
+    
+    
+    
+    <category term="Study" scheme="http://wonderland.plus/categories/Study/"/>
+    
+    
+    <category term="Blockchain" scheme="http://wonderland.plus/tags/Blockchain/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>VHDL随手记</title>
+    <link href="http://wonderland.plus/posts/65250/"/>
+    <id>http://wonderland.plus/posts/65250/</id>
+    <published>2022-09-27T07:32:04.000Z</published>
+    <updated>2022-10-07T03:25:19.207Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>一个完整的VHDL设计应该包括：</p><ul><li>实体（entity）。主要是用于描述和外部设备的接口信号以及类属等。</li><li>结构体（architecture）。用于描述系统的具体逻辑行为功能。</li><li>配置（configuration）。配置用来从库中选择所需单元爱组成系统设计的不同版本。</li><li>包集合（package）。包存放设计使用到的公共数据类型、常数和子程序等。</li><li>库（library）。库存放已经编译的实体、构造体、包集合和配置等。</li></ul><h1 id="实体-ENTITY"><a href="#实体-ENTITY" class="headerlink" title="实体 ENTITY"></a>实体 ENTITY</h1>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot; cla</summary>
+      
+    
+    
+    
+    
+    <category term="FPGA" scheme="http://wonderland.plus/tags/FPGA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Principles of Communication by Matlab</title>
+    <link href="http://wonderland.plus/posts/11189/"/>
+    <id>http://wonderland.plus/posts/11189/</id>
+    <published>2022-09-22T15:14:29.000Z</published>
+    <updated>2022-10-07T03:25:19.205Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="滤波器"><a href="#滤波器" class="headerlink" title="滤波器"></a>滤波器</h1><h2 id="Lowpass-filter-signals"><a href="#Lowpass-filter-signals" class="headerlink" title="Lowpass-filter signals"></a>Lowpass-filter signals</h2><h5 id="Matlab提供函数lowpass"><a href="#Matlab提供函数lowpass" class="headerlink" title="Matlab提供函数lowpass"></a>Matlab提供函数<strong>lowpass</strong></h5><p>y &#x3D; lowpass(x,wpass)</p><p>y &#x3D; lowpass(x,fpass,fs)</p><p> y &#x3D; lowpass(xt,fpass) </p><p>y &#x3D; lowpass( ,Name,Value)</p><p>[y,d] &#x3D; lowpass()</p><p>lowpass()</p><h5 id="直接设计低通滤波器的参数"><a href="#直接设计低通滤波器的参数" class="headerlink" title="直接设计低通滤波器的参数"></a>直接设计低通滤波器的参数</h5><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">N   = <span class="number">100</span>;        <span class="comment">% FIR filter order</span></span><br><span class="line">Fp  = <span class="number">20e3</span>;       <span class="comment">% 20 kHz passband-edge frequency</span></span><br><span class="line">Fs  = <span class="number">96e3</span>;       <span class="comment">% 96 kHz sampling frequency</span></span><br><span class="line">Rp  = <span class="number">0.00057565</span>; <span class="comment">% Corresponds to 0.01 dB peak-to-peak ripple</span></span><br><span class="line">Rst = <span class="number">1e-4</span>;       <span class="comment">% Corresponds to 80 dB stopband attenuation</span></span><br><span class="line"></span><br><span class="line">eqnum = firceqrip(N,Fp/(Fs/<span class="number">2</span>),[Rp Rst],<span class="string">&#x27;passedge&#x27;</span>); <span class="comment">% eqnum = vec of coeffs</span></span><br><span class="line">fvtool(eqnum,<span class="string">&#x27;Fs&#x27;</span>,Fs,<span class="string">&#x27;Color&#x27;</span>,<span class="string">&#x27;White&#x27;</span>) <span class="comment">% Visualize filter</span></span><br></pre></td></tr></table></figure><p>N 表示transition region 的sharp程度，数字越大，越sharp；</p><p>Fp：通带截止频率</p><p>Fs：信号采样频率</p><p>Rp:  通带波纹ripple</p><p>Rst:  阻带衰减</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot; cla</summary>
+      
+    
+    
+    
+    <category term="随手记" scheme="http://wonderland.plus/categories/%E9%9A%8F%E6%89%8B%E8%AE%B0/"/>
+    
+    
+    <category term="Matlab" scheme="http://wonderland.plus/tags/Matlab/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JavaNotes</title>
+    <link href="http://wonderland.plus/posts/33992/"/>
+    <id>http://wonderland.plus/posts/33992/</id>
+    <published>2022-07-09T08:46:31.000Z</published>
+    <updated>2022-10-07T03:25:19.199Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot; cla</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Coding Anywhere</title>
@@ -37,30 +127,6 @@
     
     
     <category term="Code" scheme="http://wonderland.plus/tags/Code/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>早期驯服小车记录</title>
-    <link href="http://wonderland.plus/posts/13444/"/>
-    <id>http://wonderland.plus/posts/13444/</id>
-    <published>2022-04-04T10:14:49.000Z</published>
-    <updated>2022-04-04T16:18:51.652Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot; cla</summary>
-      
-    
-    
-    
-    <category term="嵌入式开发" scheme="http://wonderland.plus/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/"/>
-    
-    
-    <category term="循迹小车" scheme="http://wonderland.plus/tags/%E5%BE%AA%E8%BF%B9%E5%B0%8F%E8%BD%A6/"/>
     
   </entry>
   
@@ -141,7 +207,7 @@
     <link href="http://wonderland.plus/posts/40687/"/>
     <id>http://wonderland.plus/posts/40687/</id>
     <published>2022-03-31T15:00:03.000Z</published>
-    <updated>2022-04-02T14:05:48.495Z</updated>
+    <updated>2022-04-10T04:11:56.936Z</updated>
     
     <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>今天排队论的老师讲起了图论hhh</p><p>让我想起了小时候看的有关一笔画的东西，能不能一笔画成的规律倒是知道，但竟一直没想过如何证明证明。</p><p>今天正好借着图论开课的机会重新想一想，然后就翻到了欧拉的证明，大道至简，清晰的思维值得记录。</p><h2 id="开端"><a href="#开端" class="headerlink" title="开端"></a>开端</h2><p><strong>一笔画问题（Eulerian graph）</strong>是图论中一个著名的问题。一笔画问题起源于柯尼斯堡七桥问题。数学家欧拉在他1736年发表的论文《柯尼斯堡的七桥》中不仅解决了七桥问题，也提出了<strong>一笔画定理</strong>，解决了一笔画问题。</p><p>欧拉的研究是图论的开端。</p><p>莱布尼茨在1670年写给惠更斯的一封信中写道：</p><blockquote><p>我不满足于代数，因为它既不能给出最短的证明，也不能给出最漂亮的几何结构。因此，考虑到这一点，我认为我们还需要另一种分析，几何的或线性的，直接处理位置，就像代数处理数值那样。</p></blockquote><p>莱布尼茨的研究如今被称为 <strong>拓扑学</strong>，但作为一个数学领域在当时发展缓慢。正如高斯在1833年指出的</p><blockquote><p>莱布尼茨开创了位置几何学，但当时只有欧拉和范德蒙（对，就是范德蒙行列式那位）两位几何学家对其略知一二。一个半世纪后，我们才懂得并掌握了这一几何学。</p></blockquote><p>就是在高斯口中对几何学 <em>略知一二</em> 的欧拉的一篇论文，被誉为是西方现代图论的起点。</p><p>在数学界，18世纪被誉为是欧拉的时代。令人惊讶的是，欧拉的近900本书、论文和其他作品中，有近一半是在1771年几乎完全失明后写的。（天才况且如此……</p><p><img src="https://blogimgs-1310551706.cos.ap-beijing.myqcloud.com/euler.jpg" alt="欧拉"></p><p>在1736年的 <em>Commentarii Academiae Scientiarum Imperialis Petropolitanae</em> 上，欧拉对现在著名的柯尼斯堡桥问题进行了数学描述：有没有可能计划在柯尼斯堡镇漫步一次，但是这座镇上的七座桥每座桥只能穿过一次？</p><blockquote><p>The problem, which I am told is widely known, is as follows: in K¨onigsberg in Prussia, there is an island A, called the Kneiphof ; the river which surrounds it is divided into two branches, as can be seen in Fig. [1.2], and these branches are crossed by seven bridges, a, b , c , d , e , f and g. Concerning these bridges, it was asked whether anyone could arrange a route in such a way that he would cross each bridge once and only once. I was told that some people asserted that this was impossible, while others were in doubt: but nobody would actually assert that it could be done. From this, I have formulated the general problem: whatever be the arrangement and division of the river into branches, and however many bridges there be, can one ﬁnd out whether or not it is possible to cross each bridge exactly once?</p></blockquote><p><img src="/../images/%E4%B8%80%E7%AC%94%E7%94%BB%E7%9A%84%E8%83%8C%E5%90%8E/7bridge.png" alt="七桥图示"></p><p>像其他早期的图论工作一样，柯尼斯堡七桥问题看起来只不过是一个有趣的谜题。然而，从这种看似琐碎的起源，图论发展成为一种强大而深刻的数学理论，如今在物理、生物和社会科学中有着广泛的应用。</p><h2 id="证明它！"><a href="#证明它！" class="headerlink" title="证明它！"></a>证明它！</h2><h4 id="简化"><a href="#简化" class="headerlink" title="简化"></a>简化</h4><p>在开始证明之前，值得注意的是欧拉将城市复杂的画卷（见封图）抽象成了简单的草图，在现代图论中，我们进行了进一步的简化（仅保留点和连接点的线）。</p><h4 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h4><p>当然有一种大力出奇迹的方法可以证明这个问题，就是列出所有可能的情况，找不到符合题设的就OK了。但是这种方法有几点弊端：</p><ul><li>不适用于更复杂的情况（兄弟，真的遍历不完的</li><li>不能抽象为理论！！（这很重要，琐碎变为伟大的关键</li><li>会浪费注意力在那些根本不可能成为答案的路径上</li></ul><p>欧拉的整个方法依赖于一种特别方便的方式，用这种方式可以表示桥梁之间的关系。</p><h4 id="问题表示方法"><a href="#问题表示方法" class="headerlink" title="问题表示方法"></a>问题表示方法</h4><p>我们使用大写字母A、B、C、D表示河流分隔的每个陆地区域（见上图）。如果一个旅行者通过a桥或b桥从A到B，将其写为AB</p><blockquote><p>AB中第一个字母指的是旅行者离开的区域，第二个字母指的是他过桥后到达的区域。</p></blockquote><p>因此，如果旅客离开B，穿过f桥进入D，则该路径用BD表示，两个路径AB和BD的组合用三个字母ABD表示，其中中间字母B表示第一条路径结束的区域和第二条路径开始的区域。如果旅行者又穿过桥g从D到C，我将用四个字母ABDC来表示这三个连续的路径</p><blockquote><p>这四个字母ABDC意味着旅行者从A开始，穿过B，再到D，最后到达C。</p></blockquote><p>由于每个陆地区域都被一条河的支流隔开，若要走过A、B、C、D 四个地方，旅行者必须穿过三座桥。类似地，四座桥的连续跨越将由五个字母表示。所以一般来说，无论旅行者跨越多少座桥，他的旅程都可以由一个比桥的数量大一个的字母来表示。因此，<strong>跨越七座桥需要八个字母来代表它</strong>。</p><blockquote><p>欧拉的这种表示方法使得图表本身对于解决问题变得不再必要，在现代图论中，我们用集合$V &#x3D; {v_0, v_1, \ldots , v_n}$ 和集合 $E &#x3D; {e_0, e_1, \ldots , e_m}$ 来表示，其中集合$V$ 代表顶点的集合， $E$ 代表连接顶点的边的集合。</p></blockquote><p>如果有一条回路可以遍历所有的顶点而每一条边只走过一次，那这样的路就被称作欧拉路径（包含所有顶点的迹），也是本题设想要寻找的路径。</p><p>另有更严格的条件：欧拉回路（包含所有顶点的迹且首位相接）</p><h4 id="存在吗？"><a href="#存在吗？" class="headerlink" title="存在吗？"></a>存在吗？</h4><p>因此，问题归结为找到由四个字母A、B、C、D组成的八个字母序列，其中A、B、C、D又重复。在寻找这样一个序列之前，先弄清楚是否有可能以这种方式排列字母（即找到题设路径），因为如果可以<strong>证明没有这样的排列存在</strong>，那么任何查找排列的工作都是毫无意义的。</p><p>为了尝试这样的规则，我考虑了单个区域A，有a、b、c、d 四座桥与A关连。让我们先来看看通向A的单个桥：如果一个旅行者穿过这座桥，他必须在穿越前或者在穿越后到达A，因此在任何一种情况下，字母a都会在上述表示中出现一次。如果有三座桥（比如a、b和c）通向A，如果旅行者穿过这三座桥，那么在他的旅程中，无论他是否从a开始他的旅程，字母a都将出现两次。类似地，如果五座桥通向A，那么在通过所有桥的表示中，字母A会出现三次。</p><p>因此，在柯尼斯堡七桥的问题的路线表示中，因为五座桥（a、b、c、d、e）通向A区，所以字母A必须出现三次。接下来，由于三座桥通向b，字母b必须出现两次；类似地，D必须出现两次，C也一样。因此，在一系列八个字母中，代表通过七座桥的路径，字母A必须出现三次，字母B、C和D各出现两次——但这不能在八个字母的序列中出现（$3+2+2+2&gt;8$）。因此，这样的旅程不能跨越柯尼斯堡的七座桥。</p><p>更进一步，只要通往每个区域的桥梁数量是奇数，无论桥梁如何布置，都可以判断不可能一次旅行穿越每座桥梁而不重复。因为要满足条件的话所有字母必须出现的次数之和比桥的数量多一个，然而，像我们的例子中所发生的那样，事实上需要字母出现的数量大于桥梁的数量加一，那么这样的旅程永远无法完成。</p><h4 id="怎样才会存在？"><a href="#怎样才会存在？" class="headerlink" title="怎样才会存在？"></a>怎样才会存在？</h4><p>如果通向 A 的桥的数目是偶数，那么就必须考虑是否在 A 地出发</p><blockquote><p>比如有两座桥 a、b 连接 A、B，那么在 A 出发的路径可以是 A B A ，否则是 B A B</p></blockquote><p>如果有<strong>四座</strong>桥通向A，如果旅行者从A出发，那么在整个旅程中，如果他要穿过每座桥一次，字母A必须出现三次；如果他在另一个区域开始行走，那么字母A将出现<strong>两次</strong>。</p><p>如果有<strong>六座</strong>桥通向A，如果旅程从A开始，那么字母A将出现<strong>四次</strong>；如果旅行者没有从A开始，那么字母A只出现<strong>三次</strong>。</p><p>所以，<strong>一般来说</strong>，如果桥的数量是偶数，那么如果行程不是从A开始，A的出现次数将是这个数字的一半，如果行程从A开始，A的出现次数将比桥的一半多一个。</p><p>由于在任何旅程中，一个人只能从一个区域出发。这样就可以根据通往每个区域的桥梁数量，确定表示该区域的字母出现的数量。如果桥梁数量为奇数，为桥梁数量的一半加一；如果桥梁数量为偶数，则为其一半。最后，如果所有事件的总数等于桥的数量加上一，那么满足要求的行程将是可能的，并且必须从一个有奇数座桥通往它的区域开始。当然，如果得到的字母总数比桥梁数加一小一，那么旅程可以从一个桥梁数为偶数的区域开始，这样字母数将因此增加一。</p><blockquote><p>请注意，欧拉对“表示该区域的字母出现次数”的定义取决于通向每个区域（顶点）的桥（边）的数量是偶数还是奇数。在当代图论术语中，入射到顶点$V$上的边数被称为顶点$v$的“度”。</p></blockquote><p>因此，无论给出了什么样的桥梁布置，欧拉给出的以下方法将确定是否可以穿过每座桥梁：</p><ul><li><p>首先用字母 A、B、C 等表示被水隔开的各个区域。</p></li><li><p>然后，取桥的总数加上一，把结果写在下面的工作上面。</p></li><li><p>第三，把字母A、B、C等写在一列中，并在每一个旁边写下通向它的桥梁的数量。</p></li><li><p>第四，用星号表示那些有偶数桥的字母。</p></li><li><p>第五，在每一个偶数旁边写下一半的数字，在每一个奇数旁边写下一半的数字加一。</p></li><li><p>第六，把这些数字加起来，如果这个总和小于或等于上面写的数字，也就是桥的数量加上一，就得出结论，满足要求的旅程是可能的。</p><blockquote><p>必须记住，如果总和比上面写的数字小一，那么旅程必须从标有星号的区域之一开始，如果总和相等，则必须从未标有星号的区域开始。</p></blockquote><p>柯尼斯堡镇七桥问题的求解：</p><p>七座桥，$7+1&#x3D;8$</p><table><thead><tr><th align="center">地区</th><th align="center">相邻桥数</th><th align="center">通过地区次数</th></tr></thead><tbody><tr><td align="center">A</td><td align="center">5</td><td align="center">3</td></tr><tr><td align="center">B</td><td align="center">3</td><td align="center">2</td></tr><tr><td align="center">C</td><td align="center">3</td><td align="center">3</td></tr><tr><td align="center">D</td><td align="center">3</td><td align="center">2</td></tr></tbody></table><p>显然 $3+2+2+2&gt;8$ 不满足题设</p></li></ul><p>再举一个例子，假设有如下图的排布</p><p><img src="/../images/%E4%B8%80%E7%AC%94%E7%94%BB%E7%9A%84%E8%83%8C%E5%90%8E/15bridge.png" alt="15桥"></p><table><thead><tr><th align="center"></th><th align="center"></th><th align="center">16</th></tr></thead><tbody><tr><td align="center">A*</td><td align="center">8</td><td align="center">4</td></tr><tr><td align="center">B*</td><td align="center">4</td><td align="center">2</td></tr><tr><td align="center">C*</td><td align="center">4</td><td align="center">2</td></tr><tr><td align="center">D*</td><td align="center">3</td><td align="center">2</td></tr><tr><td align="center">E</td><td align="center">5</td><td align="center">3</td></tr><tr><td align="center">F*</td><td align="center">6</td><td align="center">3</td></tr><tr><td align="center"></td><td align="center"></td><td align="center">16</td></tr></tbody></table><p>按照上述规则，我们可以找到如下路径：</p><p>​        <strong>EaFbBcFdAeFfCgAhCiDkAmEnApBoEiD</strong></p><p>这就是本题中的“欧拉路径”</p><h3 id="更进一步"><a href="#更进一步" class="headerlink" title="更进一步"></a>更进一步</h3><p>尽管上述方法已经可以在复杂的情况下找到欧拉路径（如果存在的话），但欧拉并没有止步于此，他找到了一种更抽象更简洁的方法来表达这一思想。</p><p>首先，观察到字母A、B、C等旁边写的桥的数量加起来是桥总数的两倍。原因是，在计算中，每一座通往某一特定区域的桥梁都会被计算两次，每一座桥梁连接的两个区域各计算一次。</p><p>因此，通往每个区域的桥梁总数必须为偶数（其一半等于桥梁数量）。进一步，字母A、B、C等的一些桥的数量中只有一个是奇数，或者三个是奇数，或者五个，等等，这是不可能的。因此，如果字母A、B、C等的一些桥的数量是奇数，那么这些区域的数量一定是偶数。</p><blockquote><p>在七桥问题中，字母A、B、C和D都有奇数个桥相邻，在最后一个例子中，只有两个数字是奇数，即D和E。</p></blockquote><p>上述结果也被称为“握手定理”，源于计算社交聚会期间发生的握手次数的等效问题。在社交聚会上，每个在场的人与其他在场的人握手一次。握手定理的现代表述是：“<strong>有限图中所有顶点的度之和等于图中边数的两倍。</strong>” 或 “<strong>每个有限图包含偶数个奇数度的顶点。</strong>”</p><p>由于字母 A、B、C 等所相邻的桥数的总和等于桥数的两倍。很明显，如果该总和增加2，然后再除以2，将得到我们所想要的数字（桥数加一）。因此，如果字母 A、B、C 等的所有数字（第二列）都是偶数，并且取其中的一半来获得第三列中的数字，那么这些数字的总和将比上面写的数字（桥数加一）少一个，而我们开始行走的地方需要加一，则无论是什么地方开始旅程，都可以找到符合要求的路径。在七桥问题中，如果旅行者两次穿过每座桥，就会发生这种情况（每座桥都可以被视为不同的两座）。</p><p>此外，如果字母 A、B、C 等所相邻的桥数中只有两个是奇数，其余的是偶数，那么，如果旅程从一个有奇数座桥梁通往的区域开始，那么得到符合条件的路径是可能的。因为，如果偶数减半，奇数增加一，它们的一半之和将比桥的数量大一，因此等于上面写的数字。从这可以进一步看出，如果有四，六，八……个奇数出现在第二列，那么第三列中的数字之和将比桥数大2，3，4……甚至更多。那么找到符合题设的路径将是不可能的。</p><p>至此，得到了为人们所熟知的结论，即：</p><blockquote><p>无论桥如何排列，如果有两个以上的地区有奇数座桥梁通往，那么找到符合要求的路径是不可能的。<br>如果恰好有两个区域的桥梁数量是奇数，那么如果从这两个区域中的任何一个开始，找到符合要求的路径都是可能的。<br>如果没有奇数座桥梁通往的区域，那么可以从任何区域开始完成所需的旅程。</p></blockquote><h3 id="找到路径！"><a href="#找到路径！" class="headerlink" title="找到路径！"></a>找到路径！</h3><p>如果知道了在合适条件下必然存在符合题设路径，如何找到呢？ 关于这个问题，欧拉给出了答案（给了，但是又没给hhh）</p><p>欧拉原话：</p><blockquote><p>I do not therefore think it worthwhile to give any further details concerning the ﬁnding of the routes.</p></blockquote><p>理由是对于一个区域，我们可以成对的忽视桥梁，这样结构就被大大简化，所以便可以轻而易举的找到路径。</p><h3 id="现代表述"><a href="#现代表述" class="headerlink" title="现代表述"></a>现代表述</h3><p>要得到欧拉主要结果的完整现代陈述，我们需要几个定义</p><p>连通：</p><blockquote><p>对于图 G 的两个顶点 u 和 v ，如果在中存在一条路，记为 (u,v) 路，则称 u 和 v 是连通的。如果图 G 不连通，则它每一个分支是连通的</p></blockquote><p>根据这一定义，Euler论文的主要结果如下：</p><h5 id="Theorem：有限图G包含Euler回路当且仅当G是连通的且不包含奇数度顶点。"><a href="#Theorem：有限图G包含Euler回路当且仅当G是连通的且不包含奇数度顶点。" class="headerlink" title="Theorem：有限图G包含Euler回路当且仅当G是连通的且不包含奇数度顶点。"></a>Theorem：有限图G包含Euler回路当且仅当G是连通的且不包含奇数度顶点。</h5><h5 id="Corollary：有限图G包含Euler路径当且仅当G是连通的且至多包含两个奇数度顶点。"><a href="#Corollary：有限图G包含Euler路径当且仅当G是连通的且至多包含两个奇数度顶点。" class="headerlink" title="Corollary：有限图G包含Euler路径当且仅当G是连通的且至多包含两个奇数度顶点。"></a>Corollary：有限图G包含Euler路径当且仅当G是连通的且至多包含两个奇数度顶点。</h5><p>当然，欧拉的证明与现代证明有所不同，但欧拉的这项工作为几何学特别是图论翻开了新的一页。</p><p>就这样，<em><strong>是否可以不重复的走遍七座桥</strong></em> 这样一个看似“没啥用”的问题，经过百年的发展，如今成为了可以许多学科问题的便利工具。</p><p>所以，多做点“没用的事”，挺好。</p>]]></content>
     

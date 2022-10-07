@@ -1,0 +1,201 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Principles of Communication by Matlab | Wonderland</title><meta name="keywords" content="Matlab"><meta name="author" content="A.S.,lijialin_3737@icloud.com"><meta name="copyright" content="A.S."><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="滤波器Lowpass-filter signalsMatlab提供函数lowpassy &#x3D; lowpass(x,wpass) y &#x3D; lowpass(x,fpass,fs)  y &#x3D; lowpass(xt,fpass)  y &#x3D; lowpass( ,Name,Value) [y,d] &#x3D; lowpass() lowpass() 直接设计低通滤波器的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Principles of Communication by Matlab">
+<meta property="og:url" content="http://wonderland.plus/posts/11189/index.html">
+<meta property="og:site_name" content="Wonderland">
+<meta property="og:description" content="滤波器Lowpass-filter signalsMatlab提供函数lowpassy &#x3D; lowpass(x,wpass) y &#x3D; lowpass(x,fpass,fs)  y &#x3D; lowpass(xt,fpass)  y &#x3D; lowpass( ,Name,Value) [y,d] &#x3D; lowpass() lowpass() 直接设计低通滤波器的">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://blogimgs-1310551706.cos.ap-beijing.myqcloud.com//coding.jpeg">
+<meta property="article:published_time" content="2022-09-22T15:14:29.000Z">
+<meta property="article:modified_time" content="2022-10-07T03:25:19.205Z">
+<meta property="article:author" content="A.S.">
+<meta property="article:tag" content="Matlab">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blogimgs-1310551706.cos.ap-beijing.myqcloud.com//coding.jpeg"><link rel="shortcut icon" href="/img/wonderland.png"><link rel="canonical" href="http://wonderland.plus/posts/11189/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?6bc38426f6cfe5b7568b2279783c094c";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: A.S.","link":"链接: ","source":"来源: Wonderland","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Principles of Communication by Matlab',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-10-07 11:25:19'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.1.0"><link rel="alternate" href="/atom.xml" title="Wonderland" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/face.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">14</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">13</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div><div class="menus_item"><a class="site-page" href="/List/"><i class="fa-fw fas fa-circle-check"></i><span> ToDo</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://blogimgs-1310551706.cos.ap-beijing.myqcloud.com//codeMax.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Wonderland</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div><div class="menus_item"><a class="site-page" href="/List/"><i class="fa-fw fas fa-circle-check"></i><span> ToDo</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Principles of Communication by Matlab</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-09-22T15:14:29.000Z" title="发表于 2022-09-22 23:14:29">2022-09-22</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-10-07T03:25:19.205Z" title="更新于 2022-10-07 11:25:19">2022-10-07</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E9%9A%8F%E6%89%8B%E8%AE%B0/">随手记</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">149</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>1分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Principles of Communication by Matlab"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="滤波器"><a href="#滤波器" class="headerlink" title="滤波器"></a>滤波器</h1><h2 id="Lowpass-filter-signals"><a href="#Lowpass-filter-signals" class="headerlink" title="Lowpass-filter signals"></a>Lowpass-filter signals</h2><h5 id="Matlab提供函数lowpass"><a href="#Matlab提供函数lowpass" class="headerlink" title="Matlab提供函数lowpass"></a>Matlab提供函数<strong>lowpass</strong></h5><p>y &#x3D; lowpass(x,wpass)</p>
+<p>y &#x3D; lowpass(x,fpass,fs)</p>
+<p> y &#x3D; lowpass(xt,fpass) </p>
+<p>y &#x3D; lowpass( ,Name,Value)</p>
+<p>[y,d] &#x3D; lowpass()</p>
+<p>lowpass()</p>
+<h5 id="直接设计低通滤波器的参数"><a href="#直接设计低通滤波器的参数" class="headerlink" title="直接设计低通滤波器的参数"></a>直接设计低通滤波器的参数</h5><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">N   = <span class="number">100</span>;        <span class="comment">% FIR filter order</span></span><br><span class="line">Fp  = <span class="number">20e3</span>;       <span class="comment">% 20 kHz passband-edge frequency</span></span><br><span class="line">Fs  = <span class="number">96e3</span>;       <span class="comment">% 96 kHz sampling frequency</span></span><br><span class="line">Rp  = <span class="number">0.00057565</span>; <span class="comment">% Corresponds to 0.01 dB peak-to-peak ripple</span></span><br><span class="line">Rst = <span class="number">1e-4</span>;       <span class="comment">% Corresponds to 80 dB stopband attenuation</span></span><br><span class="line"></span><br><span class="line">eqnum = firceqrip(N,Fp/(Fs/<span class="number">2</span>),[Rp Rst],<span class="string">&#x27;passedge&#x27;</span>); <span class="comment">% eqnum = vec of coeffs</span></span><br><span class="line">fvtool(eqnum,<span class="string">&#x27;Fs&#x27;</span>,Fs,<span class="string">&#x27;Color&#x27;</span>,<span class="string">&#x27;White&#x27;</span>) <span class="comment">% Visualize filter</span></span><br></pre></td></tr></table></figure>
+
+<p>N 表示transition region 的sharp程度，数字越大，越sharp；</p>
+<p>Fp：通带截止频率</p>
+<p>Fs：信号采样频率</p>
+<p>Rp:  通带波纹ripple</p>
+<p>Rst:  阻带衰减</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:lijialin_3737@icloud.com">A.S.</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://wonderland.plus/posts/11189/">http://wonderland.plus/posts/11189/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://wonderland.plus" target="_blank">Wonderland</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Matlab/">Matlab</a></div><div class="post_share"><div class="social-share" data-image="https://blogimgs-1310551706.cos.ap-beijing.myqcloud.com//coding.jpeg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="https://blogimgs-1310551706.cos.ap-beijing.myqcloud.com//Wechat.jpg" target="_blank"><img class="post-qr-code-img" src="https://blogimgs-1310551706.cos.ap-beijing.myqcloud.com//Wechat.jpg" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="https://blogimgs-1310551706.cos.ap-beijing.myqcloud.com//Alipay.jpg" target="_blank"><img class="post-qr-code-img" src="https://blogimgs-1310551706.cos.ap-beijing.myqcloud.com//Alipay.jpg" alt="alipay"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/65250/"><img class="prev-cover" src="https://blogimgs-1310551706.cos.ap-beijing.myqcloud.com/wonderful.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">VHDL随手记</div></div></a></div><div class="next-post pull-right"><a href="/posts/33992/"><img class="next-cover" src="https://blogimgs-1310551706.cos.ap-beijing.myqcloud.com/wonderful.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">JavaNotes</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="lv-container" data-id="city" data-uid="MTAyMC81NTg3My8zMjMzNw=="></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/face.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">A.S.</div><div class="author-info__description"></div></div><div class="card-info-data is-center"><div class="card-info-data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">14</div></a></div><div class="card-info-data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">13</div></a></div><div class="card-info-data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Lijialin001"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/Lijialin001" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:lijialin_3737@icloud.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Welcome to Wonderland</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%BB%A4%E6%B3%A2%E5%99%A8"><span class="toc-number">1.</span> <span class="toc-text">滤波器</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Lowpass-filter-signals"><span class="toc-number">1.1.</span> <span class="toc-text">Lowpass-filter signals</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Matlab%E6%8F%90%E4%BE%9B%E5%87%BD%E6%95%B0lowpass"><span class="toc-number">1.1.0.0.1.</span> <span class="toc-text">Matlab提供函数lowpass</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%9B%B4%E6%8E%A5%E8%AE%BE%E8%AE%A1%E4%BD%8E%E9%80%9A%E6%BB%A4%E6%B3%A2%E5%99%A8%E7%9A%84%E5%8F%82%E6%95%B0"><span class="toc-number">1.1.0.0.2.</span> <span class="toc-text">直接设计低通滤波器的参数</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/44436/" title="Blockchain随手记"><img src="https://blogimgs-1310551706.cos.ap-beijing.myqcloud.com//blockchaim_img2.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Blockchain随手记"/></a><div class="content"><a class="title" href="/posts/44436/" title="Blockchain随手记">Blockchain随手记</a><time datetime="2022-10-06T17:26:48.000Z" title="发表于 2022-10-07 01:26:48">2022-10-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/65250/" title="VHDL随手记"><img src="https://blogimgs-1310551706.cos.ap-beijing.myqcloud.com/wonderful.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="VHDL随手记"/></a><div class="content"><a class="title" href="/posts/65250/" title="VHDL随手记">VHDL随手记</a><time datetime="2022-09-27T07:32:04.000Z" title="发表于 2022-09-27 15:32:04">2022-09-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/11189/" title="Principles of Communication by Matlab"><img src="https://blogimgs-1310551706.cos.ap-beijing.myqcloud.com//coding.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Principles of Communication by Matlab"/></a><div class="content"><a class="title" href="/posts/11189/" title="Principles of Communication by Matlab">Principles of Communication by Matlab</a><time datetime="2022-09-22T15:14:29.000Z" title="发表于 2022-09-22 23:14:29">2022-09-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/33992/" title="JavaNotes"><img src="https://blogimgs-1310551706.cos.ap-beijing.myqcloud.com/wonderful.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="JavaNotes"/></a><div class="content"><a class="title" href="/posts/33992/" title="JavaNotes">JavaNotes</a><time datetime="2022-07-09T08:46:31.000Z" title="发表于 2022-07-09 16:46:31">2022-07-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/64775/" title="Numpy"><img src="https://blogimgs-1310551706.cos.ap-beijing.myqcloud.com//coding.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Numpy"/></a><div class="content"><a class="title" href="/posts/64775/" title="Numpy">Numpy</a><time datetime="2022-04-12T16:23:47.000Z" title="发表于 2022-04-13 00:23:47">2022-04-13</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://blogimgs-1310551706.cos.ap-beijing.myqcloud.com//codeMax.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2022 By A.S.</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Welcome to wonderland by A.S.</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>function loadLivere () {
+  if (typeof LivereTower === 'object') {
+    window.LivereTower.init()
+  }
+  else {
+    (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+  }
+}
+
+if ('Livere' === 'Livere' || !false) {
+  if (false) btf.loadComment(document.getElementById('lv-container'), loadLivere)
+  else loadLivere()
+}
+else {
+  function loadOtherComment () {
+    loadLivere()
+  }
+}</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

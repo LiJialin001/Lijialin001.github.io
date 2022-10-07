@@ -6,7 +6,7 @@
   <link href="http://wonderland.plus/atom.xml" rel="self"/>
   
   <link href="http://wonderland.plus/"/>
-  <updated>2022-10-07T03:25:19.195Z</updated>
+  <updated>2022-10-07T04:01:54.557Z</updated>
   <id>http://wonderland.plus/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://wonderland.plus/posts/44436/"/>
     <id>http://wonderland.plus/posts/44436/</id>
     <published>2022-10-06T17:26:48.000Z</published>
-    <updated>2022-10-07T03:25:19.195Z</updated>
+    <updated>2022-10-07T04:01:54.557Z</updated>
     
     <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="核心idea"><a href="#核心idea" class="headerlink" title="核心idea"></a>核心idea</h1><p>通过后一个区块对前一个区块的引用，并以加密技术保证了区块链不可修改</p><h1 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h1><p>分布式的，不可篡改的数据库，可验证、可信任。</p><h1 id="比特币"><a href="#比特币" class="headerlink" title="比特币"></a>比特币</h1><p>基于数学加密原理构建的不可伪造的货币系统，使用区块链技术实现了数字货币的可信支付</p><p><a href="https://bitcoin.org/bitcoin.pdf">第一篇paper&amp;比特币白皮书</a></p><p>比特币通过区块链技术，把整个账本全部公开，人手一份，全网相同，修改账本不会被其他人承认</p><p>无需中央信任机构，密码学理论保证货币防伪造</p><h2 id="区块链原理"><a href="#区块链原理" class="headerlink" title="区块链原理"></a>区块链原理</h2><p><strong>一个不断增长的全网总账本</strong></p><p>每个完全节点都拥有完整的区块链，节点总是信任最长的区块链，So，伪造区块链需要拥有超过51%的全网算力</p><p>区块链是由区块s构成的有序链表，每个区块都记录了一系列交易，并且，每个区块都指向前一个区块（通过记录上一个区块的哈希），从而形成一个链条，每个区块都有一个唯一的哈希标识。每一个区块还有一个Merkle哈希用来确保该区块的所有交易记录无法被篡改。</p><h2 id="P2P交易原理"><a href="#P2P交易原理" class="headerlink" title="P2P交易原理"></a>P2P交易原理</h2><p>无需信任中介参与的P2P（Peer-to-peer）交易</p><h3 id="数字签名"><a href="#数字签名" class="headerlink" title="数字签名"></a>数字签名</h3><p>每个人都可以自己生成一个秘钥对，包含一个私钥和一个公钥：</p><blockquote><p>私钥被称为Secret Key或者Private Key，严格保密，不能泄漏给其他人</p></blockquote><blockquote><p>公钥被称为Public Key，可以公开给任何人</p></blockquote><p>私钥签签名，公钥用于他人验证</p><blockquote><p>常用的数字签名算法有：RSA算法，DSA算法和ECDSA算法。</p><p>比特币采用的签名算法是椭圆曲线签名算法：ECDSA，使用的椭圆曲线是一个已经定义好的标准曲线<strong>secp256k1</strong> </p><p>私钥本质上就是一个1～2256的随机数，公钥是由私钥根据ECDSA算法推算出来的，通过私钥可以很容易推算出公钥，所以不必保存公钥，但通过公钥无法反推私钥，只能暴力破解</p></blockquote><h3 id="私钥"><a href="#私钥" class="headerlink" title="私钥"></a>私钥</h3><p>比特币中，私钥本质上就是一个256位的随机整数</p><h1 id="以太坊"><a href="#以太坊" class="headerlink" title="以太坊"></a>以太坊</h1><p>支持智能合约的区块链平台</p><p>实现了一个图灵完备的脚本语言，运行在EVM（Ethereum Virtual Machine，以太坊虚拟机）中，任何人都可以编写合法的脚本来执行任意逻辑（有限制）</p><h2 id="智能合约"><a href="#智能合约" class="headerlink" title="智能合约"></a>智能合约</h2><p>一种运行在区块链上的程序，保证在区块链网络的每一个节点中运行的结果完全相同。</p><p>为了消除程序运行的不确定性，智能合约有很多限制，例如，不支持浮点运算（因为浮点数有不同的表示方法，不同架构的CPU运行的浮点计算精度都不同），不支持随机数，不支持从外部读取输入等。</p><p>最常用的开发智能合约的语言是以太坊专门为其定制的<a href="https://docs.soliditylang.org/">Solidity</a>语言。</p><ul><li><p>智能合约部署在以太坊的区块链时，会根据部署者的地址和该地址的nonce分配一个合约地址，</p></li><li><p>合约地址和账户地址的格式没有区别，但<strong>合约地址没有私钥</strong>，没有人能直接操作该地址的合约数据。</p></li><li><p>要调用合约，唯一的方法是<strong>调用合约的公共函数</strong>  So 合约不能主动执行，只能被外部账户发起调用</p></li><li><p>合约内部也可以存储数据（存储在合约地址关联的存储上） So 合约具有状态，可实现比较复杂的逻辑</p></li><li><p>合约在执行的过程中，可以调用其他已部署的合约</p></li></ul><h3 id="Solidity"><a href="#Solidity" class="headerlink" title="Solidity"></a>Solidity</h3><p>大括号语言</p><p>静态类型，支持继承、库和复杂的用户定义类型等特性</p>]]></content>
     

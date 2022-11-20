@@ -1,13 +1,13 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>微机原理总结 | Wonderland</title><meta name="keywords" content="Code"><meta name="author" content="A.S.,lijialin_3737@icloud.com"><meta name="copyright" content="A.S."><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="微机原理总结8086寄存器结构通用寄存器组   AH AL AX 累加器    BH BL BX 基数   CH CL CX 计数   DH DL DX 数据      SP 堆栈指针    BP 基址指针   SI 源变址   DI 目的变址   其他   IP  指令指针    FH FL 状态标志      CS 代码段寄存器    DS 数据段寄存器   SS 堆栈段寄存器   ES 附加">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>微机原理总结 | Wonderland</title><meta name="keywords" content="Code"><meta name="author" content="A.S.,lijialin_3737@icloud.com"><meta name="copyright" content="A.S."><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="8086寄存器结构通用寄存器组   AH AL AX 累加器    BH BL BX 基数   CH CL CX 计数   DH DL DX 数据      SP 堆栈指针    BP 基址指针   SI 源变址   DI 目的变址   其他   IP  指令指针    FH FL 状态标志      CS 代码段寄存器    DS 数据段寄存器   SS 堆栈段寄存器   ES 附加段寄存器">
 <meta property="og:type" content="article">
 <meta property="og:title" content="微机原理总结">
 <meta property="og:url" content="http://wonderland.plus/posts/7427/index.html">
 <meta property="og:site_name" content="Wonderland">
-<meta property="og:description" content="微机原理总结8086寄存器结构通用寄存器组   AH AL AX 累加器    BH BL BX 基数   CH CL CX 计数   DH DL DX 数据      SP 堆栈指针    BP 基址指针   SI 源变址   DI 目的变址   其他   IP  指令指针    FH FL 状态标志      CS 代码段寄存器    DS 数据段寄存器   SS 堆栈段寄存器   ES 附加">
+<meta property="og:description" content="8086寄存器结构通用寄存器组   AH AL AX 累加器    BH BL BX 基数   CH CL CX 计数   DH DL DX 数据      SP 堆栈指针    BP 基址指针   SI 源变址   DI 目的变址   其他   IP  指令指针    FH FL 状态标志      CS 代码段寄存器    DS 数据段寄存器   SS 堆栈段寄存器   ES 附加段寄存器">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://blogimgs-1310551706.cos.ap-beijing.myqcloud.com/wonderful.png">
 <meta property="article:published_time" content="2022-11-17T11:15:11.903Z">
-<meta property="article:modified_time" content="2022-11-18T15:01:12.127Z">
+<meta property="article:modified_time" content="2022-11-20T03:25:53.373Z">
 <meta property="article:author" content="A.S.">
 <meta property="article:tag" content="Code">
 <meta name="twitter:card" content="summary">
@@ -60,7 +60,7 @@
   isHome: false,
   isHighlightShrink: false,
   isToc: true,
-  postUpdate: '2022-11-18 23:01:12'
+  postUpdate: '2022-11-20 11:25:53'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1
@@ -150,7 +150,7 @@
     }
     detectApple()
     })(window)</script><meta name="generator" content="Hexo 6.1.0"><link rel="alternate" href="/atom.xml" title="Wonderland" type="application/atom+xml">
-</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/face.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">17</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">12</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div><div class="menus_item"><a class="site-page" href="/List/"><i class="fa-fw fas fa-circle-check"></i><span> ToDo</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://blogimgs-1310551706.cos.ap-beijing.myqcloud.com/wonderful.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Wonderland</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div><div class="menus_item"><a class="site-page" href="/List/"><i class="fa-fw fas fa-circle-check"></i><span> ToDo</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">微机原理总结</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-11-17T11:15:11.903Z" title="发表于 2022-11-17 19:15:11">2022-11-17</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-11-18T15:01:12.127Z" title="更新于 2022-11-18 23:01:12">2022-11-18</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E4%B8%87%E6%81%B6%E7%9A%84%E6%9C%9F%E6%9C%AB%E8%80%83/">万恶的期末考</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">2.1k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>7分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="微机原理总结"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/posts/7427/#post-comment"><span class="gitalk-comment-count"></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="微机原理总结"><a href="#微机原理总结" class="headerlink" title="微机原理总结"></a>微机原理总结</h1><h2 id="8086寄存器结构"><a href="#8086寄存器结构" class="headerlink" title="8086寄存器结构"></a>8086寄存器结构</h2><h3 id="通用寄存器组"><a href="#通用寄存器组" class="headerlink" title="通用寄存器组"></a>通用寄存器组</h3><table>
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/face.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">17</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">12</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div><div class="menus_item"><a class="site-page" href="/List/"><i class="fa-fw fas fa-circle-check"></i><span> ToDo</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://blogimgs-1310551706.cos.ap-beijing.myqcloud.com/wonderful.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Wonderland</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div><div class="menus_item"><a class="site-page" href="/List/"><i class="fa-fw fas fa-circle-check"></i><span> ToDo</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">微机原理总结</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-11-17T11:15:11.903Z" title="发表于 2022-11-17 19:15:11">2022-11-17</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-11-20T03:25:53.373Z" title="更新于 2022-11-20 11:25:53">2022-11-20</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E4%B8%87%E6%81%B6%E7%9A%84%E6%9C%9F%E6%9C%AB%E8%80%83/">万恶的期末考</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">3.7k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>12分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="微机原理总结"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/posts/7427/#post-comment"><span class="gitalk-comment-count"></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="8086寄存器结构"><a href="#8086寄存器结构" class="headerlink" title="8086寄存器结构"></a>8086寄存器结构</h1><h2 id="通用寄存器组"><a href="#通用寄存器组" class="headerlink" title="通用寄存器组"></a>通用寄存器组</h2><table>
 <thead>
 <tr>
 <th align="center">AH</th>
@@ -198,7 +198,7 @@
 <td align="center">目的变址</td>
 </tr>
 </tbody></table>
-<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><table>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><table>
 <thead>
 <tr>
 <th align="center">IP</th>
@@ -232,11 +232,11 @@
 <td align="center">附加段寄存器</td>
 </tr>
 </tbody></table>
-<h2 id="汇编指令"><a href="#汇编指令" class="headerlink" title="汇编指令"></a>汇编指令</h2><h3 id="一些默认"><a href="#一些默认" class="headerlink" title="一些默认"></a>一些默认</h3><ul>
+<h1 id="汇编指令"><a href="#汇编指令" class="headerlink" title="汇编指令"></a>汇编指令</h1><h2 id="一些默认"><a href="#一些默认" class="headerlink" title="一些默认"></a>一些默认</h2><ul>
 <li>执行指令后，dst中存放运算结果</li>
 <li>一个单元（nn）给字时，为nn和nn+1</li>
 </ul>
-<h3 id="寻址方式"><a href="#寻址方式" class="headerlink" title="寻址方式"></a>寻址方式</h3><p>寻得操作数来源</p>
+<h2 id="寻址方式"><a href="#寻址方式" class="headerlink" title="寻址方式"></a>寻址方式</h2><p><strong>寻得操作数来源</strong></p>
 <ol>
 <li><p>固定寻址</p>
 <p>操作数地址被隐含于操作码中，无需计算EA</p>
@@ -838,7 +838,265 @@
 </tr>
 </thead>
 </table>
-</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:lijialin_3737@icloud.com">A.S.</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://wonderland.plus/posts/7427/">http://wonderland.plus/posts/7427/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://wonderland.plus" target="_blank">Wonderland</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Code/">Code</a></div><div class="post_share"><div class="social-share" data-image="https://blogimgs-1310551706.cos.ap-beijing.myqcloud.com/wonderful.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="https://blogimgs-1310551706.cos.ap-beijing.myqcloud.com//Wechat.jpg" target="_blank"><img class="post-qr-code-img" src="https://blogimgs-1310551706.cos.ap-beijing.myqcloud.com//Wechat.jpg" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="https://blogimgs-1310551706.cos.ap-beijing.myqcloud.com//Alipay.jpg" target="_blank"><img class="post-qr-code-img" src="https://blogimgs-1310551706.cos.ap-beijing.myqcloud.com//Alipay.jpg" alt="alipay"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/posts/29962/"><img class="next-cover" src="https://blogimgs-1310551706.cos.ap-beijing.myqcloud.com/wonderful.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Shell随手记</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/posts/50883/" title="Coding Anywhere"><img class="cover" src="https://blogimgs-1310551706.cos.ap-beijing.myqcloud.com//coding.jpeg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-04-04</div><div class="title">Coding Anywhere</div></div></a></div><div><a href="/posts/29962/" title="Shell随手记"><img class="cover" src="https://blogimgs-1310551706.cos.ap-beijing.myqcloud.com/wonderful.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-10-30</div><div class="title">Shell随手记</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="gitalk-container"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/face.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">A.S.</div><div class="author-info__description"></div></div><div class="card-info-data is-center"><div class="card-info-data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">17</div></a></div><div class="card-info-data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">12</div></a></div><div class="card-info-data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Lijialin001"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/Lijialin001" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:lijialin_3737@icloud.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Welcome to Wonderland</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BE%AE%E6%9C%BA%E5%8E%9F%E7%90%86%E6%80%BB%E7%BB%93"><span class="toc-number">1.</span> <span class="toc-text">微机原理总结</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#8086%E5%AF%84%E5%AD%98%E5%99%A8%E7%BB%93%E6%9E%84"><span class="toc-number">1.1.</span> <span class="toc-text">8086寄存器结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%9A%E7%94%A8%E5%AF%84%E5%AD%98%E5%99%A8%E7%BB%84"><span class="toc-number">1.1.1.</span> <span class="toc-text">通用寄存器组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B6%E4%BB%96"><span class="toc-number">1.1.2.</span> <span class="toc-text">其他</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%87%E7%BC%96%E6%8C%87%E4%BB%A4"><span class="toc-number">1.2.</span> <span class="toc-text">汇编指令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E9%BB%98%E8%AE%A4"><span class="toc-number">1.2.1.</span> <span class="toc-text">一些默认</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F"><span class="toc-number">1.2.2.</span> <span class="toc-text">寻址方式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8086%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.3.</span> <span class="toc-text">8086指令系统</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Data-Transfer"><span class="toc-number">1.3.1.</span> <span class="toc-text">Data Transfer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Arithmetic"><span class="toc-number">1.3.2.</span> <span class="toc-text">Arithmetic</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Logic-and-Shift"><span class="toc-number">1.3.3.</span> <span class="toc-text">Logic and Shift</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#String-Manipulation"><span class="toc-number">1.3.4.</span> <span class="toc-text">String Manipulation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Control-Jump"><span class="toc-number">1.3.5.</span> <span class="toc-text">Control Jump</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Processor-Control"><span class="toc-number">1.3.6.</span> <span class="toc-text">Processor Control</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Interrupt"><span class="toc-number">1.3.7.</span> <span class="toc-text">Interrupt</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/7427/" title="微机原理总结"><img src="https://blogimgs-1310551706.cos.ap-beijing.myqcloud.com/wonderful.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="微机原理总结"/></a><div class="content"><a class="title" href="/posts/7427/" title="微机原理总结">微机原理总结</a><time datetime="2022-11-17T11:15:11.903Z" title="发表于 2022-11-17 19:15:11">2022-11-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/29962/" title="Shell随手记"><img src="https://blogimgs-1310551706.cos.ap-beijing.myqcloud.com/wonderful.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Shell随手记"/></a><div class="content"><a class="title" href="/posts/29962/" title="Shell随手记">Shell随手记</a><time datetime="2022-10-30T10:44:45.000Z" title="发表于 2022-10-30 18:44:45">2022-10-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/13657/" title="ESP32随手记"><img src="https://blogimgs-1310551706.cos.ap-beijing.myqcloud.com/wonderful.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="ESP32随手记"/></a><div class="content"><a class="title" href="/posts/13657/" title="ESP32随手记">ESP32随手记</a><time datetime="2022-10-21T10:09:12.000Z" title="发表于 2022-10-21 18:09:12">2022-10-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/42770/" title="CoreData随手记"><img src="https://blogimgs-1310551706.cos.ap-beijing.myqcloud.com//blockchaim_img2.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="CoreData随手记"/></a><div class="content"><a class="title" href="/posts/42770/" title="CoreData随手记">CoreData随手记</a><time datetime="2022-10-20T05:00:13.000Z" title="发表于 2022-10-20 13:00:13">2022-10-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/44436/" title="Blockchain随手记"><img src="https://blogimgs-1310551706.cos.ap-beijing.myqcloud.com//blockchaim_img2.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Blockchain随手记"/></a><div class="content"><a class="title" href="/posts/44436/" title="Blockchain随手记">Blockchain随手记</a><time datetime="2022-10-06T17:26:48.000Z" title="发表于 2022-10-07 01:26:48">2022-10-07</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://blogimgs-1310551706.cos.ap-beijing.myqcloud.com/wonderful.png')"><div id="footer-wrap"><div class="copyright">&copy;2022 By A.S.</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Welcome to wonderland by A.S.</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>var preloader = {
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">A(.asm源程序)--&gt;B(汇编程序)--&gt;C(.obj/.lst)</span><br></pre></td></tr></table></figure>
+
+<p>使用：<strong>MASM宏汇编</strong></p>
+<h1 id="MASM宏汇编语言规范"><a href="#MASM宏汇编语言规范" class="headerlink" title="MASM宏汇编语言规范"></a>MASM宏汇编语言规范</h1><h3 id="分段结构"><a href="#分段结构" class="headerlink" title="分段结构"></a>分段结构</h3><ul>
+<li>对应CPU内存分段管理</li>
+<li>每段有名字且以伪指令 <strong>SEGMENT</strong> 开始，以 <strong>ENDS</strong> 结束</li>
+<li>源程序由若干段组成，以 <strong>END</strong> 结束</li>
+</ul>
+<h3 id="语句构成"><a href="#语句构成" class="headerlink" title="语句构成"></a>语句构成</h3><p><strong>语句类型</strong></p>
+<ul>
+<li>指令语句，以助记符为基础</li>
+<li>伪指令语句，管理性，不产生机器代码</li>
+<li>宏指令语句</li>
+</ul>
+<p><strong>构成与规范</strong></p>
+<ul>
+<li><p>名字域：</p>
+<ul>
+<li>由字母开头，可包含数字和专有字符</li>
+<li>指令语句名字后跟冒号，伪指令无</li>
+</ul>
+</li>
+<li><p>操作符域：</p>
+<ul>
+<li>主要为助记符</li>
+</ul>
+</li>
+<li><p>操作数域：</p>
+<ul>
+<li><p>逗号分隔</p>
+</li>
+<li><p>存储器操作数</p>
+<ul>
+<li>标号：指令语句的名字域，可认为是指令语句的地址</li>
+<li>变量：存放在某存储单元的数据，变量符号的地址</li>
+</ul>
+</li>
+<li><p>表达式：由以上以及运算符组合而成</p>
+</li>
+<li><p>运算符</p>
+<ul>
+<li><p>算数运算符：完成整数的运算，结果为整数</p>
+<table>
+<thead>
+<tr>
+<th>+、-、*、&#x2F;</th>
+<th>MOD(求余)、SHL、SHR</th>
+</tr>
+</thead>
+</table>
+</li>
+<li><p>逻辑运算符</p>
+</li>
+<li><p>关系运算符</p>
+<table>
+<thead>
+<tr>
+<th>EQ</th>
+<th>相等</th>
+<th>NE</th>
+<th>不等</th>
+<th>LT</th>
+<th>小于</th>
+<th>GT</th>
+<th>大于</th>
+<th>LE</th>
+<th>小于等于</th>
+<th>GE</th>
+<th>大于等于</th>
+</tr>
+</thead>
+</table>
+</li>
+<li><p>分析运算符</p>
+<table>
+<thead>
+<tr>
+<th>SEG</th>
+<th>求段基址</th>
+<th>OFFEST</th>
+<th>求偏移量</th>
+<th>TYPE</th>
+<th>求变量类型</th>
+<th>SIZE</th>
+<th>求字节数</th>
+<th>LENGTH</th>
+<th>求变量长度</th>
+</tr>
+</thead>
+</table>
+<p>TYPE类型值</p>
+<table>
+<thead>
+<tr>
+<th>1</th>
+<th>2</th>
+<th>4</th>
+<th>-1</th>
+<th>-2</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>DB</td>
+<td>DW</td>
+<td>DD</td>
+<td>NEAR</td>
+<td>FAR</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>综合运算符</p>
+<p>为存储器地址操作数临时指定一个新属性</p>
+<table>
+<thead>
+<tr>
+<th>PTR</th>
+<th align="center">将左边类型指定给右边地址</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>THIS</td>
+<td align="center">类似上；与下一条指令分配的段、偏移、属性相同</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="伪指令"><a href="#伪指令" class="headerlink" title="伪指令"></a>伪指令</h1><h4 id="数据定义"><a href="#数据定义" class="headerlink" title="数据定义"></a>数据定义</h4><p>DB～DD、DQ、DT</p>
+<p>重复操作符 DUP  [变量名] DB 100 DUP(?)   ？表示不设初值（随机</p>
+<h4 id="符号定义"><a href="#符号定义" class="headerlink" title="符号定义"></a><strong>符号定义</strong></h4><table>
+<thead>
+<tr>
+<th>EQU</th>
+<th align="center">类似于C中#define，不允许重复定义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&#x3D;</td>
+<td align="center">允许重复定义</td>
+</tr>
+</tbody></table>
+<h4 id="段定义"><a href="#段定义" class="headerlink" title="段定义"></a>段定义</h4><p>段名  <strong>SEGMENT</strong>  [定位类型] [组合类型] [‘类别’]</p>
+<p>​          段内语句</p>
+<p>段名  <strong>ENDS</strong></p>
+<ul>
+<li>定位类型：起始边界要求 缺省值PARA </li>
+<li>组合类型：表示与其他段关系  缺省值NONE</li>
+<li>类别：一种名字信息</li>
+</ul>
+<h4 id="段寻址ASSUME"><a href="#段寻址ASSUME" class="headerlink" title="段寻址ASSUME"></a>段寻址ASSUME</h4><p>用来设定各段名与 段寄存器间关系  格式：<strong>ASSUME</strong> 段寄存器名 :  段名 ， 段寄存器名 :  段名 ……</p>
+<p>没有给出初值，需和初始化代码配合使用；CS段首址无需初值，系统自动设置</p>
+<h4 id="过程定义-PROC-x2F-ENDP"><a href="#过程定义-PROC-x2F-ENDP" class="headerlink" title="过程定义 PROC&#x2F;ENDP"></a>过程定义 PROC&#x2F;ENDP</h4><p>格式</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">过程名		PROC		[NEAR]/FAR(属性)</span><br><span class="line">				代码</span><br><span class="line">				RET(应为过程中最后执行的语句)</span><br><span class="line">				代码</span><br><span class="line">过程名		ENDP</span><br></pre></td></tr></table></figure>
+
+<h4 id="程序计数器"><a href="#程序计数器" class="headerlink" title="程序计数器 $"></a>程序计数器 $</h4><p>$的值为程序下一所能分配存储单元的偏移地址</p>
+<h4 id="定位伪指令-ORG"><a href="#定位伪指令-ORG" class="headerlink" title="定位伪指令 ORG"></a>定位伪指令 ORG</h4><p>指定下一条语句的 偏移地址</p>
+<h4 id="结构伪指令"><a href="#结构伪指令" class="headerlink" title="结构伪指令"></a>结构伪指令</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">定义：</span><br><span class="line">结构名		STRUC</span><br><span class="line">				内容</span><br><span class="line">结构名		ENDS</span><br><span class="line"></span><br><span class="line">预置：</span><br><span class="line">结构变量名		结构名	&lt;字段值表&gt;</span><br><span class="line"></span><br><span class="line">引用：</span><br><span class="line">结构变量名.结构字段名</span><br><span class="line">[地址寄存器].结构字段名</span><br></pre></td></tr></table></figure>
+
+<h4 id="记录伪指令"><a href="#记录伪指令" class="headerlink" title="记录伪指令"></a>记录伪指令</h4><p>记录共1～2字节，可为每个字段分配二进制位数</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">定义：</span><br><span class="line">记录名		RECORD		&lt;字段名&gt;: 宽度[= 表达式][,...]</span><br><span class="line">预置：</span><br><span class="line">记录变量名		记录名		&lt;字段值表，以B结尾，逗号隔开&gt;</span><br><span class="line">记录运算符：</span><br><span class="line">WIDTH		记录名/记录字段名		；求出记录/记录字段所占位数</span><br><span class="line">MASK		记录字段名					；一个记录字段在记录中占拿几位（以出现1为标记</span><br><span class="line">记录字段名单独出现：代表其移到记录最右端所需位数</span><br><span class="line">MOV		AH，20H	SHL AD		；AH = 20 SHL 1 = 40H</span><br></pre></td></tr></table></figure>
+
+<h4 id="宏相关"><a href="#宏相关" class="headerlink" title="宏相关"></a>宏相关</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">宏定义：</span><br><span class="line">宏指令名		MACRO	&lt;形式参数1&gt;,&lt;形式参数2&gt;,... ；也可不设参数</span><br><span class="line">					语句组</span><br><span class="line">          ENDM</span><br><span class="line">宏调用：</span><br><span class="line">直接当语句用，有参数后面跟参数，逗号隔开</span><br><span class="line">取消：</span><br><span class="line">PURGE		&lt;宏指令名1&gt;，&lt;宏指令名2&gt;，&lt;宏指令名3&gt;，...</span><br></pre></td></tr></table></figure>
+
+<h4 id="系统调用功能"><a href="#系统调用功能" class="headerlink" title="系统调用功能"></a>系统调用功能</h4><p>见PDF</p>
+<h1 id="主存储器"><a href="#主存储器" class="headerlink" title="主存储器"></a>主存储器</h1><h2 id="半导体存储器"><a href="#半导体存储器" class="headerlink" title="半导体存储器"></a>半导体存储器</h2><h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><ul>
+<li><p>按读写功能：RWM、ROM （只写、只读</p>
+</li>
+<li><p>按存取方式：DAM、SAM、RAM  （直接存取、顺序存取、随机存取</p>
+</li>
+<li><p>按器件分类：双极性TTL、单极性MOS</p>
+<blockquote>
+<p>双极性快、功率大、集成度低</p>
+<p>单极性相反</p>
+</blockquote>
+</li>
+<li><p>按存储原理：RAM、ROM</p>
+<blockquote>
+<p>RAM可读可写、断电丢失</p>
+<p>ROM正常只读、断电不丢失</p>
+</blockquote>
+</li>
+<li><p>按数据传送方式：并行、串行</p>
+</li>
+</ul>
+<h3 id="性能指标"><a href="#性能指标" class="headerlink" title="性能指标"></a>性能指标</h3><ul>
+<li>存储容量</li>
+<li>存取时间</li>
+<li>功耗</li>
+<li>工作电源<ul>
+<li>TTL +5V</li>
+<li>MOS +3～+18V</li>
+</ul>
+</li>
+</ul>
+<h3 id="组成"><a href="#组成" class="headerlink" title="组成"></a>组成</h3><ul>
+<li>存储体</li>
+<li>地址译码器</li>
+<li>控制逻辑电路</li>
+<li>数据缓冲器</li>
+</ul>
+<h3 id="高速缓存工作原理"><a href="#高速缓存工作原理" class="headerlink" title="高速缓存工作原理"></a>高速缓存工作原理</h3><ul>
+<li>依赖：<ul>
+<li>程序访问的局部性</li>
+<li>数据相对集中存储</li>
+<li>把频繁访问的指令、数据存放在速度非常高 (与CPU速度相当)的SRAM——高速缓存 CACHE中</li>
+</ul>
+</li>
+<li>取指令、数据时先到CACHE中查找，没找到再到RAM找</li>
+<li>系统的平均存取速度(加权平均) ≈ Cache存取速度×命中率+RAM存取速度×不命中率 </li>
+<li>Cache与内存的空间比一般为1:128。</li>
+</ul>
+<h3 id="存储器寻址方法"><a href="#存储器寻址方法" class="headerlink" title="存储器寻址方法"></a>存储器寻址方法</h3><p><strong>片选</strong>：根据主存储器 系统对每个存储器芯片的地址范围的分配</p>
+<p><strong>字选</strong>：选中存储器芯片片内存储单元，由芯片内地译码电路完成</p>
+<h1 id="I-x2F-O接口"><a href="#I-x2F-O接口" class="headerlink" title="I&#x2F;O接口"></a>I&#x2F;O接口</h1><h2 id="I-x2F-O组成"><a href="#I-x2F-O组成" class="headerlink" title="I&#x2F;O组成"></a>I&#x2F;O组成</h2><h4 id="接向CPU"><a href="#接向CPU" class="headerlink" title="接向CPU"></a>接向CPU</h4><ul>
+<li><p>总线驱动器：匹配CPU数据总线速度和驱动能力</p>
+</li>
+<li><p>地址译码器：接收CPU总线信号并译码，对各端口(reg)寻址</p>
+</li>
+<li><p>控制逻辑：实现CPU对端口读写操作和时序控制</p>
+</li>
+</ul>
+<h4 id="接向外设"><a href="#接向外设" class="headerlink" title="接向外设"></a>接向外设</h4><ul>
+<li>缓冲器（数据reg）</li>
+<li>控制reg：存放CPU控制命令</li>
+<li>状态reg：保存状态以供CPU查询</li>
+</ul>
+<h2 id="I-x2F-O控制方式"><a href="#I-x2F-O控制方式" class="headerlink" title="I&#x2F;O控制方式"></a>I&#x2F;O控制方式</h2><h4 id="程序控制"><a href="#程序控制" class="headerlink" title="程序控制"></a>程序控制</h4><ul>
+<li>无条件传送（同步传送<ul>
+<li>条件：外设必须随时准备就绪</li>
+</ul>
+</li>
+<li>条件传送（查询传送<ul>
+<li>先查询外设工作状态，在外设就绪后进行数据输入、输出</li>
+</ul>
+</li>
+</ul>
+<h4 id="DMA控制"><a href="#DMA控制" class="headerlink" title="DMA控制"></a>DMA控制</h4><h1 id="中断"><a href="#中断" class="headerlink" title="中断"></a>中断</h1><p><strong>三大用途</strong>：分时操作、实时处理、故障处理</p>
+<h4 id="可屏蔽中断（IF-x3D-0时屏蔽"><a href="#可屏蔽中断（IF-x3D-0时屏蔽" class="headerlink" title="可屏蔽中断（IF&#x3D;0时屏蔽"></a>可屏蔽中断（IF&#x3D;0时屏蔽</h4><p>使IF&#x3D;0情况：</p>
+<ul>
+<li><p>关中断、禁止中断、中断屏蔽</p>
+</li>
+<li><p>系统复位，使<strong>IF</strong>&#x3D;<strong>0</strong> </p>
+</li>
+<li><p>任何一个中断被响应，使<strong>IF</strong>&#x3D;<strong>0</strong> </p>
+</li>
+<li><p>执行指令<strong>CLI</strong>，使<strong>IF</strong>&#x3D;<strong>0</strong></p>
+</li>
+</ul>
+<p>使IF&#x3D;1情况：</p>
+<ul>
+<li>开中断、允许中断、中断开放 </li>
+<li>执行指令<strong>STI</strong>，使<strong>IF</strong>&#x3D;<strong>1</strong></li>
+</ul>
+<p><strong>中断向量在中断向量表中的位置称为中断向量地址；</strong></p>
+<p><strong>中断向量地址&#x3D;中断类型号×4</strong></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:lijialin_3737@icloud.com">A.S.</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://wonderland.plus/posts/7427/">http://wonderland.plus/posts/7427/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://wonderland.plus" target="_blank">Wonderland</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Code/">Code</a></div><div class="post_share"><div class="social-share" data-image="https://blogimgs-1310551706.cos.ap-beijing.myqcloud.com/wonderful.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="https://blogimgs-1310551706.cos.ap-beijing.myqcloud.com//Wechat.jpg" target="_blank"><img class="post-qr-code-img" src="https://blogimgs-1310551706.cos.ap-beijing.myqcloud.com//Wechat.jpg" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="https://blogimgs-1310551706.cos.ap-beijing.myqcloud.com//Alipay.jpg" target="_blank"><img class="post-qr-code-img" src="https://blogimgs-1310551706.cos.ap-beijing.myqcloud.com//Alipay.jpg" alt="alipay"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/posts/29962/"><img class="next-cover" src="https://blogimgs-1310551706.cos.ap-beijing.myqcloud.com/wonderful.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Shell随手记</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/posts/50883/" title="Coding Anywhere"><img class="cover" src="https://blogimgs-1310551706.cos.ap-beijing.myqcloud.com//coding.jpeg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-04-04</div><div class="title">Coding Anywhere</div></div></a></div><div><a href="/posts/29962/" title="Shell随手记"><img class="cover" src="https://blogimgs-1310551706.cos.ap-beijing.myqcloud.com/wonderful.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-10-30</div><div class="title">Shell随手记</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="gitalk-container"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/face.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">A.S.</div><div class="author-info__description"></div></div><div class="card-info-data is-center"><div class="card-info-data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">17</div></a></div><div class="card-info-data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">12</div></a></div><div class="card-info-data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Lijialin001"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/Lijialin001" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:lijialin_3737@icloud.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Welcome to Wonderland</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#8086%E5%AF%84%E5%AD%98%E5%99%A8%E7%BB%93%E6%9E%84"><span class="toc-number">1.</span> <span class="toc-text">8086寄存器结构</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%9A%E7%94%A8%E5%AF%84%E5%AD%98%E5%99%A8%E7%BB%84"><span class="toc-number">1.1.</span> <span class="toc-text">通用寄存器组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B6%E4%BB%96"><span class="toc-number">1.2.</span> <span class="toc-text">其他</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B1%87%E7%BC%96%E6%8C%87%E4%BB%A4"><span class="toc-number">2.</span> <span class="toc-text">汇编指令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E9%BB%98%E8%AE%A4"><span class="toc-number">2.1.</span> <span class="toc-text">一些默认</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F"><span class="toc-number">2.2.</span> <span class="toc-text">寻址方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8086%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F"><span class="toc-number">2.3.</span> <span class="toc-text">8086指令系统</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Data-Transfer"><span class="toc-number">2.3.1.</span> <span class="toc-text">Data Transfer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Arithmetic"><span class="toc-number">2.3.2.</span> <span class="toc-text">Arithmetic</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Logic-and-Shift"><span class="toc-number">2.3.3.</span> <span class="toc-text">Logic and Shift</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#String-Manipulation"><span class="toc-number">2.3.4.</span> <span class="toc-text">String Manipulation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Control-Jump"><span class="toc-number">2.3.5.</span> <span class="toc-text">Control Jump</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Processor-Control"><span class="toc-number">2.3.6.</span> <span class="toc-text">Processor Control</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Interrupt"><span class="toc-number">2.3.7.</span> <span class="toc-text">Interrupt</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#MASM%E5%AE%8F%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E8%A7%84%E8%8C%83"><span class="toc-number">3.</span> <span class="toc-text">MASM宏汇编语言规范</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E6%AE%B5%E7%BB%93%E6%9E%84"><span class="toc-number">3.0.1.</span> <span class="toc-text">分段结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%AD%E5%8F%A5%E6%9E%84%E6%88%90"><span class="toc-number">3.0.2.</span> <span class="toc-text">语句构成</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BC%AA%E6%8C%87%E4%BB%A4"><span class="toc-number">4.</span> <span class="toc-text">伪指令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%AE%9A%E4%B9%89"><span class="toc-number">4.0.0.1.</span> <span class="toc-text">数据定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%A6%E5%8F%B7%E5%AE%9A%E4%B9%89"><span class="toc-number">4.0.0.2.</span> <span class="toc-text">符号定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AE%B5%E5%AE%9A%E4%B9%89"><span class="toc-number">4.0.0.3.</span> <span class="toc-text">段定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AE%B5%E5%AF%BB%E5%9D%80ASSUME"><span class="toc-number">4.0.0.4.</span> <span class="toc-text">段寻址ASSUME</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%87%E7%A8%8B%E5%AE%9A%E4%B9%89-PROC-x2F-ENDP"><span class="toc-number">4.0.0.5.</span> <span class="toc-text">过程定义 PROC&#x2F;ENDP</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A8%8B%E5%BA%8F%E8%AE%A1%E6%95%B0%E5%99%A8"><span class="toc-number">4.0.0.6.</span> <span class="toc-text">程序计数器 $</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9A%E4%BD%8D%E4%BC%AA%E6%8C%87%E4%BB%A4-ORG"><span class="toc-number">4.0.0.7.</span> <span class="toc-text">定位伪指令 ORG</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%93%E6%9E%84%E4%BC%AA%E6%8C%87%E4%BB%A4"><span class="toc-number">4.0.0.8.</span> <span class="toc-text">结构伪指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%B0%E5%BD%95%E4%BC%AA%E6%8C%87%E4%BB%A4"><span class="toc-number">4.0.0.9.</span> <span class="toc-text">记录伪指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%8F%E7%9B%B8%E5%85%B3"><span class="toc-number">4.0.0.10.</span> <span class="toc-text">宏相关</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8%E5%8A%9F%E8%83%BD"><span class="toc-number">4.0.0.11.</span> <span class="toc-text">系统调用功能</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%BB%E5%AD%98%E5%82%A8%E5%99%A8"><span class="toc-number">5.</span> <span class="toc-text">主存储器</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%8A%E5%AF%BC%E4%BD%93%E5%AD%98%E5%82%A8%E5%99%A8"><span class="toc-number">5.1.</span> <span class="toc-text">半导体存储器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E7%B1%BB"><span class="toc-number">5.1.1.</span> <span class="toc-text">分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%A7%E8%83%BD%E6%8C%87%E6%A0%87"><span class="toc-number">5.1.2.</span> <span class="toc-text">性能指标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%84%E6%88%90"><span class="toc-number">5.1.3.</span> <span class="toc-text">组成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%AB%98%E9%80%9F%E7%BC%93%E5%AD%98%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86"><span class="toc-number">5.1.4.</span> <span class="toc-text">高速缓存工作原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%98%E5%82%A8%E5%99%A8%E5%AF%BB%E5%9D%80%E6%96%B9%E6%B3%95"><span class="toc-number">5.1.5.</span> <span class="toc-text">存储器寻址方法</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#I-x2F-O%E6%8E%A5%E5%8F%A3"><span class="toc-number">6.</span> <span class="toc-text">I&#x2F;O接口</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#I-x2F-O%E7%BB%84%E6%88%90"><span class="toc-number">6.1.</span> <span class="toc-text">I&#x2F;O组成</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8E%A5%E5%90%91CPU"><span class="toc-number">6.1.0.1.</span> <span class="toc-text">接向CPU</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8E%A5%E5%90%91%E5%A4%96%E8%AE%BE"><span class="toc-number">6.1.0.2.</span> <span class="toc-text">接向外设</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#I-x2F-O%E6%8E%A7%E5%88%B6%E6%96%B9%E5%BC%8F"><span class="toc-number">6.2.</span> <span class="toc-text">I&#x2F;O控制方式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A8%8B%E5%BA%8F%E6%8E%A7%E5%88%B6"><span class="toc-number">6.2.0.1.</span> <span class="toc-text">程序控制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#DMA%E6%8E%A7%E5%88%B6"><span class="toc-number">6.2.0.2.</span> <span class="toc-text">DMA控制</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%AD%E6%96%AD"><span class="toc-number">7.</span> <span class="toc-text">中断</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%AF%E5%B1%8F%E8%94%BD%E4%B8%AD%E6%96%AD%EF%BC%88IF-x3D-0%E6%97%B6%E5%B1%8F%E8%94%BD"><span class="toc-number">7.0.0.1.</span> <span class="toc-text">可屏蔽中断（IF&#x3D;0时屏蔽</span></a></li></ol></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/7427/" title="微机原理总结"><img src="https://blogimgs-1310551706.cos.ap-beijing.myqcloud.com/wonderful.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="微机原理总结"/></a><div class="content"><a class="title" href="/posts/7427/" title="微机原理总结">微机原理总结</a><time datetime="2022-11-17T11:15:11.903Z" title="发表于 2022-11-17 19:15:11">2022-11-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/29962/" title="Shell随手记"><img src="https://blogimgs-1310551706.cos.ap-beijing.myqcloud.com/wonderful.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Shell随手记"/></a><div class="content"><a class="title" href="/posts/29962/" title="Shell随手记">Shell随手记</a><time datetime="2022-10-30T10:44:45.000Z" title="发表于 2022-10-30 18:44:45">2022-10-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/13657/" title="ESP32随手记"><img src="https://blogimgs-1310551706.cos.ap-beijing.myqcloud.com/wonderful.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="ESP32随手记"/></a><div class="content"><a class="title" href="/posts/13657/" title="ESP32随手记">ESP32随手记</a><time datetime="2022-10-21T10:09:12.000Z" title="发表于 2022-10-21 18:09:12">2022-10-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/42770/" title="CoreData随手记"><img src="https://blogimgs-1310551706.cos.ap-beijing.myqcloud.com//blockchaim_img2.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="CoreData随手记"/></a><div class="content"><a class="title" href="/posts/42770/" title="CoreData随手记">CoreData随手记</a><time datetime="2022-10-20T05:00:13.000Z" title="发表于 2022-10-20 13:00:13">2022-10-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/44436/" title="Blockchain随手记"><img src="https://blogimgs-1310551706.cos.ap-beijing.myqcloud.com//blockchaim_img2.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Blockchain随手记"/></a><div class="content"><a class="title" href="/posts/44436/" title="Blockchain随手记">Blockchain随手记</a><time datetime="2022-10-06T17:26:48.000Z" title="发表于 2022-10-07 01:26:48">2022-10-07</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://blogimgs-1310551706.cos.ap-beijing.myqcloud.com/wonderful.png')"><div id="footer-wrap"><div class="copyright">&copy;2022 By A.S.</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Welcome to wonderland by A.S.</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>var preloader = {
   endLoading: () => {
     document.body.style.overflow = 'auto';
     document.getElementById('loading-box').classList.add("loaded")

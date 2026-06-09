@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 620" role="img" aria-label="VDSB-GWSyn paper preview">
+  <rect width="900" height="620" fill="#f7faf9"/>
+  <rect x="82" y="52" width="736" height="516" rx="14" fill="#fff" stroke="#d9e1de"/>
+  <text x="450" y="116" text-anchor="middle" font-family="Georgia, serif" font-size="34" font-weight="700" fill="#18211f">VDSB-GWSyn</text>
+  <text x="450" y="154" text-anchor="middle" font-family="Arial, sans-serif" font-size="19" fill="#5c6863">Diffusion Schrodinger Bridge for Guidewire Synthesis</text>
+  <text x="450" y="190" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#0f766e">MICCAI 2026 early accept · arXiv:2606.00109</text>
+  <g transform="translate(154 250)" fill="none" stroke-linecap="round">
+    <path d="M0 120c88-88 172-56 238-18 83 48 164 32 240-36" stroke="#10201d" stroke-width="16" opacity=".12"/>
+    <path d="M0 120c88-88 172-56 238-18 83 48 164 32 240-36" stroke="#0f766e" stroke-width="6"/>
+    <path d="M516 92c64-48 113-39 160-14" stroke="#d85645" stroke-width="6"/>
+  </g>
+  <g font-family="Arial, sans-serif">
+    <rect x="138" y="418" width="182" height="72" rx="10" fill="#e8f5f2"/>
+    <rect x="360" y="418" width="182" height="72" rx="10" fill="#fff4ed"/>
+    <rect x="582" y="418" width="182" height="72" rx="10" fill="#eef7ef"/>
+    <text x="229" y="448" text-anchor="middle" font-size="16" font-weight="800" fill="#0a4f4b">MPE</text>
+    <text x="229" y="474" text-anchor="middle" font-size="18" fill="#18211f">16.01 -> 7.71 px</text>
+    <text x="451" y="448" text-anchor="middle" font-size="16" font-weight="800" fill="#a44b36">PCK@3</text>
+    <text x="451" y="474" text-anchor="middle" font-size="18" fill="#18211f">52.63 -> 86.27%</text>
+    <text x="673" y="448" text-anchor="middle" font-size="16" font-weight="800" fill="#357a52">Task</text>
+    <text x="673" y="474" text-anchor="middle" font-size="18" fill="#18211f">endpoint localization</text>
+  </g>
+</svg>

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 620" role="img" aria-label="Authorized Chinese invention patent preview">
+  <rect width="900" height="620" fill="#f7faf9"/>
+  <rect x="94" y="46" width="712" height="528" rx="14" fill="#fff" stroke="#d9e1de"/>
+  <g font-family="Arial, sans-serif">
+    <text x="450" y="104" text-anchor="middle" font-size="24" font-weight="800" fill="#18211f">授权发明专利</text>
+    <text x="450" y="145" text-anchor="middle" font-size="28" font-weight="800" fill="#0a4f4b">CN 118470193 B</text>
+    <text x="450" y="186" text-anchor="middle" font-size="18" fill="#5c6863">一种结合二元组损失约束的生成对抗网络反演方法</text>
+    <text x="450" y="224" text-anchor="middle" font-size="16" fill="#d85645">授权公告日：2025.04.22</text>
+    <g transform="translate(190 276)">
+      <rect width="180" height="118" rx="12" fill="#10201d"/>
+      <circle cx="68" cy="58" r="22" fill="#a7f3d0" opacity=".55"/>
+      <circle cx="118" cy="58" r="22" fill="#d85645" opacity=".55"/>
+      <text x="90" y="154" text-anchor="middle" font-size="16" fill="#5c6863">tuple loss</text>
+      <path d="M224 58h140" stroke="#8aa39b" stroke-width="5"/>
+      <path d="M356 46l24 12-24 12" fill="#8aa39b"/>
+      <rect x="420" width="180" height="118" rx="12" fill="#f1f5f4" stroke="#d9e1de"/>
+      <text x="510" y="52" text-anchor="middle" font-size="18" font-weight="800" fill="#18211f">TriPlaneNet</text>
+      <text x="510" y="82" text-anchor="middle" font-size="15" fill="#5c6863">GAN inversion</text>
+      <text x="510" y="154" text-anchor="middle" font-size="16" fill="#5c6863">identity preserving</text>
+    </g>
+    <text x="450" y="506" text-anchor="middle" font-size="17" fill="#5c6863">Inventors: Shuai Xiao, Jialin Li, Jiabao Wen, Meng Xi, Jiachen Yang</text>
+  </g>
+</svg>

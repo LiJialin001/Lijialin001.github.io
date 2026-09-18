@@ -1,0 +1,41 @@
+{
+  "source": "Camera-ready manuscript: downstream detection tables (ARCADE and multi-center), also reproduced in the complete appendix table.",
+  "datasets": {
+    "arcade": {
+      "label": "ARCADE",
+      "description": "Public benchmark. Detectors are trained with real images, synthetic images, or their union, and evaluated on the same held-out real test split. Mean ± standard deviation over three runs.",
+      "rows": [
+        {"detector":"YOLOv8","training":"Real-only","map":[0.525,0.009],"f1":[0.664,0.009]},
+        {"detector":"YOLOv8","training":"Synth-only","map":[0.662,0.008],"f1":[0.737,0.008]},
+        {"detector":"YOLOv8","training":"Real+Synth","map":[0.727,0.006],"f1":[0.775,0.007]},
+        {"detector":"DINO-DETR","training":"Real-only","map":[0.508,0.010],"f1":[0.645,0.010]},
+        {"detector":"DINO-DETR","training":"Synth-only","map":[0.615,0.012],"f1":[0.697,0.011]},
+        {"detector":"DINO-DETR","training":"Real+Synth","map":[0.720,0.007],"f1":[0.766,0.008]},
+        {"detector":"Grounding DINO","training":"Real-only","map":[0.276,0.012],"f1":[0.453,0.014]},
+        {"detector":"Grounding DINO","training":"Synth-only","map":[0.330,0.015],"f1":[0.505,0.015]},
+        {"detector":"Grounding DINO","training":"Real+Synth","map":[0.418,0.011],"f1":[0.564,0.013]},
+        {"detector":"RTMDet","training":"Real-only","map":[0.545,0.008],"f1":[0.687,0.009]},
+        {"detector":"RTMDet","training":"Synth-only","map":[0.625,0.010],"f1":[0.726,0.010]},
+        {"detector":"RTMDet","training":"Real+Synth","map":[0.675,0.007],"f1":[0.749,0.008]}
+      ]
+    },
+    "multi-center": {
+      "label": "Multi-center",
+      "description": "Internal dataset collected across three centers. Evaluation uses held-out real images with the same detector suite and training settings. Mean ± standard deviation over three runs.",
+      "rows": [
+        {"detector":"YOLOv8","training":"Real-only","map":[0.654,0.011],"f1":[0.725,0.010]},
+        {"detector":"YOLOv8","training":"Synth-only","map":[0.582,0.014],"f1":[0.648,0.013]},
+        {"detector":"YOLOv8","training":"Real+Synth","map":[0.731,0.008],"f1":[0.779,0.007]},
+        {"detector":"DINO-DETR","training":"Real-only","map":[0.638,0.010],"f1":[0.710,0.009]},
+        {"detector":"DINO-DETR","training":"Synth-only","map":[0.565,0.013],"f1":[0.635,0.012]},
+        {"detector":"DINO-DETR","training":"Real+Synth","map":[0.725,0.007],"f1":[0.768,0.008]},
+        {"detector":"Grounding DINO","training":"Real-only","map":[0.385,0.012],"f1":[0.532,0.014]},
+        {"detector":"Grounding DINO","training":"Synth-only","map":[0.312,0.016],"f1":[0.485,0.015]},
+        {"detector":"Grounding DINO","training":"Real+Synth","map":[0.442,0.010],"f1":[0.588,0.011]},
+        {"detector":"RTMDet","training":"Real-only","map":[0.615,0.009],"f1":[0.695,0.010]},
+        {"detector":"RTMDet","training":"Synth-only","map":[0.548,0.012],"f1":[0.622,0.011]},
+        {"detector":"RTMDet","training":"Real+Synth","map":[0.688,0.006],"f1":[0.754,0.007]}
+      ]
+    }
+  }
+}

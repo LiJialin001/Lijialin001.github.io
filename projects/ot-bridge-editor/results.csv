@@ -1,0 +1,25 @@
+dataset,detector,training,map50_mean,map50_std,f1_mean,f1_std
+ARCADE,YOLOv8,Real-only,0.525,0.009,0.664,0.009
+ARCADE,YOLOv8,Synth-only,0.662,0.008,0.737,0.008
+ARCADE,YOLOv8,Real+Synth,0.727,0.006,0.775,0.007
+ARCADE,DINO-DETR,Real-only,0.508,0.01,0.645,0.01
+ARCADE,DINO-DETR,Synth-only,0.615,0.012,0.697,0.011
+ARCADE,DINO-DETR,Real+Synth,0.72,0.007,0.766,0.008
+ARCADE,Grounding DINO,Real-only,0.276,0.012,0.453,0.014
+ARCADE,Grounding DINO,Synth-only,0.33,0.015,0.505,0.015
+ARCADE,Grounding DINO,Real+Synth,0.418,0.011,0.564,0.013
+ARCADE,RTMDet,Real-only,0.545,0.008,0.687,0.009
+ARCADE,RTMDet,Synth-only,0.625,0.01,0.726,0.01
+ARCADE,RTMDet,Real+Synth,0.675,0.007,0.749,0.008
+Multi-center,YOLOv8,Real-only,0.654,0.011,0.725,0.01
+Multi-center,YOLOv8,Synth-only,0.582,0.014,0.648,0.013
+Multi-center,YOLOv8,Real+Synth,0.731,0.008,0.779,0.007
+Multi-center,DINO-DETR,Real-only,0.638,0.01,0.71,0.009
+Multi-center,DINO-DETR,Synth-only,0.565,0.013,0.635,0.012
+Multi-center,DINO-DETR,Real+Synth,0.725,0.007,0.768,0.008
+Multi-center,Grounding DINO,Real-only,0.385,0.012,0.532,0.014
+Multi-center,Grounding DINO,Synth-only,0.312,0.016,0.485,0.015
+Multi-center,Grounding DINO,Real+Synth,0.442,0.01,0.588,0.011
+Multi-center,RTMDet,Real-only,0.615,0.009,0.695,0.01
+Multi-center,RTMDet,Synth-only,0.548,0.012,0.622,0.011
+Multi-center,RTMDet,Real+Synth,0.688,0.006,0.754,0.007

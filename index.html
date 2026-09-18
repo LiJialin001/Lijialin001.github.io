@@ -1,364 +1,97 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Jialin Li | Medical Image Synthesis and Generative Models</title>
-    <meta
-      name="description"
-      content="Jialin Li is a PhD student at Tianjin University working on synthetic medical imaging data, generative models, controllable image editing, optimal transport, and diffusion Schrodinger bridges."
-    >
-    <meta name="theme-color" content="#0f766e">
-    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="styles.css">
-  </head>
-  <body>
-    <header class="site-header">
-      <a class="brand" href="#top" aria-label="Jialin Li homepage">Jialin Li</a>
-      <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <nav class="site-nav" aria-label="Primary navigation">
-        <a href="#research">Research</a>
-        <a href="#publications">Publications</a>
-        <a href="#projects">Projects</a>
-        <a href="#experience">Experience</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </header>
-
-    <main id="top">
-      <section class="hero" aria-label="Profile introduction">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-          <p class="eyebrow">PhD Student · Tianjin University · 李佳林</p>
-          <h1>Jialin Li</h1>
-          <p class="hero-copy">
-            I work on synthetic data and generative modeling for data-scarce medical imaging, with a focus on
-            controllable image editing, diffusion Schrodinger bridges, optimal transport, and downstream task
-            enhancement across medical AI settings.
-          </p>
-          <div class="hero-links" aria-label="Profile links">
-            <a class="btn primary" href="mailto:lijialin_3737@tju.edu.cn">Email</a>
-            <a class="btn" href="https://scholar.google.com/citations?user=gbTe0zUAAAAJ" target="_blank" rel="noreferrer">Google Scholar</a>
-            <a class="btn" href="https://orcid.org/0009-0007-2608-1565" target="_blank" rel="noreferrer">ORCID</a>
-            <a class="btn" href="https://github.com/LiJialin001" target="_blank" rel="noreferrer">GitHub</a>
-            <a class="btn" href="https://wonderland.plus" target="_blank" rel="noreferrer">wonderland.plus</a>
-          </div>
-          <dl class="quick-facts" aria-label="Research highlights">
-            <div>
-              <dt>ICML 2026</dt>
-              <dd>First-author paper on OT-Bridge Editor</dd>
-            </div>
-            <div>
-              <dt>AAAI 2026</dt>
-              <dd>Auto-annotation data generation for image registration</dd>
-            </div>
-            <div>
-              <dt>MICCAI 2026</dt>
-              <dd>Early accepted controllable device synthesis work</dd>
-            </div>
-          </dl>
-        </div>
-      </section>
-
-      <section class="band news-band" aria-labelledby="news-title">
-        <div class="section-inner compact">
-          <div class="section-heading">
-            <p class="section-kicker">Updates</p>
-            <h2 id="news-title">Recent News</h2>
-          </div>
-          <div class="news-list">
-            <article>
-              <time datetime="2026-05">May 2026</time>
-              <p><strong>OT-Bridge Editor</strong> was accepted to ICML 2026 and released on arXiv.</p>
-            </article>
-            <article>
-              <time datetime="2026-05">May 2026</time>
-              <p><strong>VDSB-GWSyn</strong> was early accepted to MICCAI 2026 and released on arXiv.</p>
-            </article>
-            <article>
-              <time datetime="2026-03-14">Mar 2026</time>
-              <p><strong>Automatic Translational Correction of Multi-View CAG</strong> appeared in AAAI 2026.</p>
-            </article>
-            <article>
-              <time datetime="2025-04-22">Apr 2025</time>
-              <p>A Chinese invention patent on tuple-loss constrained GAN inversion was granted.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="band light" id="research" aria-labelledby="research-title">
-        <div class="section-inner">
-          <div class="section-heading wide">
-            <p class="section-kicker">Research</p>
-            <h2 id="research-title">Research Interests</h2>
-            <p>
-              My research centers on controllable synthetic data for data-scarce medical imaging, aiming to make
-              downstream medical AI models more robust when high-quality annotations are limited or expensive.
-            </p>
-          </div>
-          <div class="focus-grid">
-            <article class="focus-card accent-teal">
-              <h3>Medical Synthetic Data</h3>
-              <p>Generating high-fidelity medical images, lesion-like variations, device samples, and training pairs for scarce-data tasks.</p>
-            </article>
-            <article class="focus-card accent-coral">
-              <h3>Geometry-Constrained Generation</h3>
-              <p>Editing vascular structures with pixel-level boundary control and preservation of non-target anatomy.</p>
-            </article>
-            <article class="focus-card accent-green">
-              <h3>Diffusion, OT, and Bridges</h3>
-              <p>Using optimal transport and diffusion Schrodinger bridge formulations for path-level generative control.</p>
-            </article>
-            <article class="focus-card accent-gold">
-              <h3>Model Evaluation</h3>
-              <p>Assessing model information discrepancy and interpretability through dataset-independent visual signals.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="band" id="publications" aria-labelledby="pub-title">
-        <div class="section-inner">
-          <div class="section-heading">
-            <p class="section-kicker">Publications</p>
-            <h2 id="pub-title">Selected Publications</h2>
-          </div>
-
-          <div class="publication-list">
-            <article class="publication featured">
-              <div class="pub-meta">
-                <span>ICML 2026</span>
-                <span>First Author</span>
-              </div>
-              <h3>Geometrically Constrained Stenosis Editing in Coronary Angiography via Entropic Optimal Transport</h3>
-              <p class="authors"><strong>Jialin Li</strong>, Zhuo Zhang, Yue Cao, Guipeng Lan, Jiabao Wen, Shuai Xiao, Jiachen Yang</p>
-              <p>
-                Proposes OT-Bridge Editor, a geometry-constrained medical image editing framework validated on
-                angiographic lesion synthesis. Synthetic data improves downstream detection by 27.8% on ARCADE and
-                23.0% on a multi-center clinical dataset.
-              </p>
-              <div class="pub-links">
-                <a href="https://arxiv.org/abs/2605.08851" target="_blank" rel="noreferrer">arXiv</a>
-                <a href="https://github.com/LiJialin001/OT-Bridge-Editor" target="_blank" rel="noreferrer">Code</a>
-              </div>
-            </article>
-
-            <article class="publication">
-              <div class="pub-meta">
-                <span>AAAI 2026</span>
-                <span>Co-author</span>
-              </div>
-              <h3>Automatic Translational Correction of Multi-View Coronary Angiography Based on Auto-Annotation Data Generation</h3>
-              <p class="authors">Yue Cao, Zhuo Zhang, Shuai Xiao, <strong>Jialin Li</strong>, Guipeng Lan, Jiabao Wen, Jiachen Yang</p>
-              <p>
-                Develops annotation-free data synthesis and robust multi-view translational correction, supporting
-                large-scale high-fidelity matching pair generation and multi-center generalization.
-              </p>
-              <div class="pub-links">
-                <a href="https://doi.org/10.1609/aaai.v40i4.37253" target="_blank" rel="noreferrer">DOI</a>
-                <a href="https://ojs.aaai.org/index.php/AAAI/article/view/37253" target="_blank" rel="noreferrer">AAAI</a>
-                <a href="https://github.com/CaoYue2004/AutomaticTranslationalCorrection" target="_blank" rel="noreferrer">Code</a>
-              </div>
-            </article>
-
-            <article class="publication">
-              <div class="pub-meta">
-                <span>MICCAI 2026</span>
-                <span>Co-author</span>
-              </div>
-              <h3>VDSB-GWSyn: Diffusion Schrodinger Bridge for Controllable and Anatomically Feasible Guidewire Synthesis in Coronary Angiography</h3>
-              <p class="authors">Haoyuan Tang, Zhuo Zhang, <strong>Jialin Li</strong>, Shuai Xiao, Jiachen Yang</p>
-              <p>
-                Builds a DSB-based controllable device synthesis framework with shape priors, anatomical constraints,
-                endpoint labels, and background preservation. Synthetic pre-training plus real fine-tuning reduces
-                endpoint MPE from 16.01 px to 7.71 px.
-              </p>
-              <div class="pub-links">
-                <a href="https://arxiv.org/abs/2606.00109" target="_blank" rel="noreferrer">arXiv</a>
-              </div>
-            </article>
-
-            <article class="publication">
-              <div class="pub-meta">
-                <span>ESWA 2025</span>
-                <span>Second Author</span>
-              </div>
-              <h3>DD-MID: An Innovative Approach to Assess Model Information Discrepancy Based on Deep Dream</h3>
-              <p class="authors">Zhuo Zhang, <strong>Jialin Li</strong>, Shuai Xiao, Haoyu Li, Jiabao Wen, Wen Lu, Jiachen Yang, Xinbo Gao</p>
-              <p>
-                Introduces a dataset-independent method for measuring model information discrepancy, supporting model
-                comparison, active learning, incremental evaluation, and interpretability analysis.
-              </p>
-              <div class="pub-links">
-                <a href="https://doi.org/10.1016/j.eswa.2025.127207" target="_blank" rel="noreferrer">DOI</a>
-                <a href="https://www.sciencedirect.com/science/article/abs/pii/S0957417425008292" target="_blank" rel="noreferrer">ScienceDirect</a>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="band light" id="projects" aria-labelledby="project-title">
-        <div class="section-inner">
-          <div class="section-heading wide">
-            <p class="section-kicker">Work</p>
-            <h2 id="project-title">Research Projects and Patent</h2>
-            <p>
-              The projects below connect method development with clinical downstream tasks: detection, localization,
-              registration, and controllable image-label synthesis.
-            </p>
-          </div>
-          <div class="project-grid">
-            <article class="project-card">
-              <img src="assets/ot-bridge-overview.png" alt="Overview diagram of OT-Bridge Editor" loading="lazy">
-              <div class="project-body">
-                <p class="project-label">First-author project · ICML 2026</p>
-                <h3>OT-Bridge Editor</h3>
-                <p>
-                  Geometry-constrained medical image editing, including method derivation, experiments, ablations,
-                  cross-dataset evaluation, paper writing, and open-source preparation.
-                </p>
-              </div>
-            </article>
-
-            <article class="project-card">
-              <img src="assets/vdsb-preview.png" alt="First page preview of VDSB-GWSyn paper" loading="lazy">
-              <div class="project-body">
-                <p class="project-label">Collaborative project · MICCAI 2026</p>
-                <h3>VDSB-GWSyn</h3>
-                <p>
-                  Controllable interventional-device synthesis with anatomical feasibility constraints, image-label generation, and
-                  downstream endpoint localization enhancement.
-                </p>
-              </div>
-            </article>
-
-            <article class="project-card">
-              <img src="assets/aaai-atc-preview.png" alt="First page preview of AAAI translational correction paper" loading="lazy">
-              <div class="project-body">
-                <p class="project-label">Collaborative project · AAAI 2026</p>
-                <h3>Annotation-Free Multi-View Correction</h3>
-                <p>
-                  High-fidelity auto-annotation data generation and robust translation estimation for multi-view
-                  medical image registration scenarios.
-                </p>
-              </div>
-            </article>
-
-            <article class="project-card">
-              <img src="assets/patent-preview.png" alt="First page preview of authorized Chinese invention patent" loading="lazy">
-              <div class="project-body">
-                <p class="project-label">Authorized invention patent · CN 118470193 B</p>
-                <h3>Tuple-Loss Constrained GAN Inversion</h3>
-                <p>
-                  Introduces tuple loss into TriPlaneNet inversion to improve accuracy, stability, and identity-specific
-                  feature preservation in generative model inversion.
-                </p>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="band" id="experience" aria-labelledby="experience-title">
-        <div class="section-inner two-column">
-          <div>
-            <div class="section-heading">
-              <p class="section-kicker">Background</p>
-              <h2 id="experience-title">Education and Experience</h2>
-            </div>
-            <div class="timeline">
-              <article>
-                <time>2024.09 - Present</time>
-                <h3>PhD Student, Information and Communication Engineering</h3>
-                <p>Tianjin University. Research on generative medical imaging, synthetic data augmentation, and data-efficient medical AI.</p>
-              </article>
-              <article>
-                <time>2020.09 - 2024.07</time>
-                <h3>B.Eng. in Communication Engineering</h3>
-                <p>Tianjin University. Built an engineering foundation through mobile application development before moving into deep learning and medical image generation.</p>
-              </article>
-              <article>
-                <time>Undergraduate service</time>
-                <h3>Mobile Team Lead, Tianwaitian Studio</h3>
-                <p>Led iOS and Flutter maintenance, release work, feature development, and technical training for the WePeiyang app.</p>
-              </article>
-            </div>
-          </div>
-
-          <aside class="side-panel" aria-label="Skills and honors">
-            <section>
-              <h3>Methods</h3>
-              <p>Diffusion models, Schrodinger bridges, optimal transport, GAN inversion, medical image synthesis, detection, segmentation, localization, cross-view geometric correction, ablation design.</p>
-            </section>
-            <section>
-              <h3>Tools</h3>
-              <p>Python, PyTorch, MATLAB, Swift, Dart/Flutter, C/C++, Git, LaTeX, paper camera-ready preparation, poster and presentation production.</p>
-            </section>
-            <section>
-              <h3>Honors</h3>
-              <p>Huawei ICT Innovation Competition national second prize, North China computer application contest third prize, Tianjin division electronic design contest second prize, Tianjin University Merit Student twice, IEEE Student Member.</p>
-            </section>
-          </aside>
-        </div>
-      </section>
-
-      <section class="contact-band" id="contact" aria-labelledby="contact-title">
-        <div class="section-inner contact-inner">
-          <div>
-            <p class="section-kicker">Contact</p>
-            <h2 id="contact-title">Open to Research Collaboration</h2>
-            <p>
-              I am interested in collaborations on medical image synthesis, controllable generation, synthetic data
-              evaluation, and data-efficient downstream learning.
-            </p>
-          </div>
-          <div class="contact-actions">
-            <a class="btn primary" href="mailto:lijialin_3737@tju.edu.cn">lijialin_3737@tju.edu.cn</a>
-            <a class="btn" href="https://scholar.google.com/citations?user=gbTe0zUAAAAJ" target="_blank" rel="noreferrer">Scholar Profile</a>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <p>© <span id="year">2026</span> Jialin Li. Built for GitHub Pages.</p>
-    </footer>
-
-    <script src="script.js"></script>
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Jialin Li",
-        "alternateName": "李佳林",
-        "email": "mailto:lijialin_3737@tju.edu.cn",
-        "affiliation": {
-          "@type": "CollegeOrUniversity",
-          "name": "Tianjin University"
-        },
-        "jobTitle": "PhD Student",
-        "url": "https://github.com/LiJialin001",
-        "sameAs": [
-          "https://scholar.google.com/citations?user=gbTe0zUAAAAJ",
-          "https://orcid.org/0009-0007-2608-1565",
-          "https://github.com/LiJialin001",
-          "https://wonderland.plus"
-        ],
-        "knowsAbout": [
-          "Medical image synthesis",
-          "Synthetic data generation",
-          "Medical image analysis",
-          "Diffusion models",
-          "Optimal transport",
-          "Schrodinger bridge"
-        ]
-      }
-    </script>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jialin Li | Generative Modeling &amp; Synthetic Data</title>
+  <meta name="description" content="Jialin Li, PhD student at Tianjin University. Research in generative modeling, controllable synthesis, synthetic data, and model understanding.">
+  <meta name="theme-color" content="#fafbfc">
+  <link rel="canonical" href="https://wonderland.plus/">
+  <meta property="og:title" content="Jialin Li | Generative Modeling &amp; Synthetic Data">
+  <meta property="og:description" content="Research, publications, and projects in controllable generation and data-efficient learning.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://wonderland.plus/">
+  <meta property="og:image" content="https://wonderland.plus/assets/ot-bridge-overview.png">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <aside class="identity-rail" aria-label="Identity and navigation">
+    <a class="identity" href="#top" aria-label="Jialin Li, back to top"><span class="monogram" aria-hidden="true">JL<span>.</span></span><span class="identity-name">Jialin Li <span lang="zh-CN">李佳林</span></span></a>
+    <p class="rail-bio">PhD Student<br>Tianjin University</p>
+    <nav class="section-nav" aria-label="Main navigation">
+      <a href="#publications"><span>01</span> Publications</a>
+      <a href="#news"><span>02</span> News</a>
+      <a href="#experience"><span>03</span> Experience</a>
+      <a href="#more"><span>04</span> Beyond Papers</a>
+    </nav>
+    <div class="rail-bottom"><p class="small-label">Elsewhere</p><div class="social-links"><a href="mailto:lijialin_3737@tju.edu.cn">Email</a><a href="https://scholar.google.com/citations?user=gbTe0zUAAAAJ">Scholar</a><a href="https://github.com/LiJialin001">GitHub</a><a href="https://orcid.org/0009-0007-2608-1565">ORCID</a></div><p class="rail-domain">wonderland.plus</p></div>
+  </aside>
+  <main id="main" class="home-main">
+    <section id="top" class="profile" aria-labelledby="profile-title">
+      <p class="eyebrow">Research / Tianjin University</p>
+      <h1 id="profile-title">Jialin Li<span class="chinese-name" lang="zh-CN">李佳林</span></h1>
+      <p class="profile-lead">Generative modeling.<br>Controllable synthesis. Useful data.</p>
+      <p class="profile-bio">I am a PhD student in Information and Communication Engineering at <strong>Tianjin University</strong>. I study how generative models can produce controllable, structured synthetic data that supports learning when real data is limited.</p>
+      <p class="profile-bio">My work spans geometry-constrained image editing, optimal transport and Schrödinger bridges, and model information discrepancy. Medical imaging provides a demanding setting for much of my work so far.</p>
+      <div class="research-topics" aria-label="Research interests"><span>Generative models</span><span>Synthetic data</span><span>Model understanding</span></div>
+      <a class="text-link profile-contact" href="mailto:lijialin_3737@tju.edu.cn">lijialin_3737@tju.edu.cn <span aria-hidden="true">↗</span></a>
+    </section>
+    <section id="publications" class="home-section" aria-labelledby="publications-title">
+      <div class="section-heading"><div><p class="eyebrow">01 / Selected work</p><h2 id="publications-title">Publications</h2></div><a class="text-link" href="https://scholar.google.com/citations?user=gbTe0zUAAAAJ">Google Scholar <span aria-hidden="true">↗</span></a></div>
+      <!-- publications:start -->
+<article class="publication featured" id="ot-bridge-editor">
+        <a class="publication-art" href="projects/ot-bridge-editor/" aria-label="OT-Bridge Editor"><img src="assets/ot-bridge-overview.png" alt="OT-Bridge Editor: structural conditioning, constrained transport, and geometry-guided output" loading="lazy"></a>
+        <div class="publication-body"><div class="pub-meta"><span class="venue">ICML 2026</span><span>First author</span><span>Controllable image editing</span></div>
+        <h3><a href="projects/ot-bridge-editor/">Geometrically Constrained Stenosis Editing in Coronary Angiography via Entropic Optimal Transport</a></h3><p class="authors"><strong>Jialin Li</strong>, Zhuo Zhang, Yue Cao, Guipeng Lan, Jiabao Wen, Shuai Xiao, Jiachen Yang</p><p class="pub-summary">Geometry-constrained image editing through entropic optimal transport and a guided Schrödinger bridge. Synthetic augmentation improves detection on held-out real angiograms.</p>
+        <div class="pub-links"><a class="project-link" href="projects/ot-bridge-editor/">Project page <span aria-hidden="true">→</span></a><a href="https://arxiv.org/abs/2605.08851">Paper <span aria-hidden="true">↗</span></a><a href="https://github.com/LiJialin001/OT-Bridge-Editor">Code <span aria-hidden="true">↗</span></a></div></div>
+      </article>
+<article class="publication" id="vdsb-gwsyn">
+        <a class="publication-art" href="https://arxiv.org/abs/2606.00109" aria-label="VDSB-GWSyn"><img src="assets/vdsb-method-000.jpg" alt="VDSB-GWSyn method diagram from the paper" loading="lazy"></a>
+        <div class="publication-body"><div class="pub-meta"><span class="venue">MICCAI 2026</span><span>Co-author</span><span>Structured data synthesis</span></div>
+        <h3><a href="https://arxiv.org/abs/2606.00109">VDSB-GWSyn: Diffusion Schrodinger Bridge for Controllable and Anatomically Feasible Guidewire Synthesis in Coronary Angiography</a></h3><p class="authors">Haoyuan Tang, Zhuo Zhang, <strong>Jialin Li</strong>, Shuai Xiao, Jiachen Yang</p><p class="pub-summary">Controllable device synthesis with anatomical constraints and paired endpoint labels. Synthetic pre-training supports downstream endpoint localization.</p>
+        <div class="pub-links"><a href="https://arxiv.org/abs/2606.00109">Paper <span aria-hidden="true">↗</span></a></div></div>
+      </article>
+<article class="publication" id="automatic-translational-correction">
+        <a class="publication-art" href="https://doi.org/10.1609/aaai.v40i4.37253" aria-label="Auto-Annotation &amp; Multi-View Correction"><img src="assets/aaai-atc-method.png" alt="Image generation, automatic keypoint labels, matching, and translational correction pipeline" loading="lazy"></a>
+        <div class="publication-body"><div class="pub-meta"><span class="venue">AAAI 2026</span><span>Co-author</span><span>Synthetic supervision</span></div>
+        <h3><a href="https://doi.org/10.1609/aaai.v40i4.37253">Automatic Translational Correction of Multi-View Coronary Angiography Based on Auto-Annotation Data Generation</a></h3><p class="authors">Yue Cao, Zhuo Zhang, Shuai Xiao, <strong>Jialin Li</strong>, Guipeng Lan, Jiabao Wen, Jiachen Yang</p><p class="pub-summary">Auto-annotated synthetic image pairs connect generative modeling with matching and multi-view geometric correction.</p>
+        <div class="pub-links"><a href="https://doi.org/10.1609/aaai.v40i4.37253">Paper <span aria-hidden="true">↗</span></a><a href="https://github.com/CaoYue2004/AutomaticTranslationalCorrection">Code <span aria-hidden="true">↗</span></a></div></div>
+      </article>
+<article class="publication" id="dd-mid">
+        <a class="publication-art type-art" href="https://doi.org/10.1016/j.eswa.2025.127207" aria-label="DD-MID"><strong>DD-MID</strong><span>Model understanding</span></a>
+        <div class="publication-body"><div class="pub-meta"><span class="venue">ESWA 2025</span><span>Second author</span><span>Model understanding</span></div>
+        <h3><a href="https://doi.org/10.1016/j.eswa.2025.127207">DD-MID: An Innovative Approach to Assess Model Information Discrepancy Based on Deep Dream</a></h3><p class="authors">Zhuo Zhang, <strong>Jialin Li</strong>, Shuai Xiao, Haoyu Li, Jiabao Wen, Wen Lu, Jiachen Yang, Xinbo Gao</p><p class="pub-summary">Dataset-independent comparison of model information using Deep Dream, with applications to model evaluation and interpretability.</p>
+        <div class="pub-links"><a href="https://doi.org/10.1016/j.eswa.2025.127207">Paper <span aria-hidden="true">↗</span></a></div></div>
+      </article>
+      <!-- publications:end -->
+    </section>
+    <section id="news" class="home-section" aria-labelledby="news-title">
+      <div class="section-heading"><div><p class="eyebrow">02 / Updates</p><h2 id="news-title">Recent news</h2></div></div>
+      <div class="news-list">
+        <article><time datetime="2026-05">May 2026</time><p><a href="projects/ot-bridge-editor/">OT-Bridge Editor</a> accepted to <strong>ICML 2026</strong>.</p></article>
+        <article><time datetime="2026-05">May 2026</time><p><a href="https://arxiv.org/abs/2606.00109">VDSB-GWSyn</a> received early acceptance to <strong>MICCAI 2026</strong>.</p></article>
+        <article><time datetime="2026-03">Mar 2026</time><p>Our work on auto-annotation data generation and multi-view correction appeared in <strong>AAAI 2026</strong>.</p></article>
+        <article><time datetime="2025-04">Apr 2025</time><p>Our invention patent on tuple-loss constrained GAN inversion was granted.</p></article>
+      </div>
+    </section>
+    <section id="experience" class="home-section" aria-labelledby="experience-title">
+      <div class="section-heading"><div><p class="eyebrow">03 / Background</p><h2 id="experience-title">Education &amp; experience</h2></div></div>
+      <div class="experience-list">
+        <article><p class="period">2024 — Present</p><div><h3>Tianjin University</h3><p class="role">PhD · Information and Communication Engineering</p><p>Research in controllable generation, synthetic data augmentation, and data-efficient medical imaging.</p></div><span class="institution-mark" aria-hidden="true">TJU</span></article>
+        <article><p class="period">2020 — 2024</p><div><h3>Tianjin University</h3><p class="role">B.Eng. · Communication Engineering</p><p>Engineering foundations in signal processing and software development, followed by research in deep learning and image generation.</p></div><span class="institution-mark" aria-hidden="true">TJU</span></article>
+        <article><p class="period">Undergraduate</p><div><h3>Tianwaitian Studio</h3><p class="role">Mobile Team Lead</p><p>iOS and Flutter development for WePeiyang, including feature delivery, release maintenance, and technical training.</p></div><span class="institution-mark studio-mark" aria-hidden="true">TWT</span></article>
+      </div>
+    </section>
+    <section id="more" class="home-section" aria-labelledby="more-title">
+      <div class="section-heading"><div><p class="eyebrow">04 / Beyond papers</p><h2 id="more-title">Patents &amp; other work</h2></div></div>
+      <article class="patent-entry"><p class="small-label">Granted invention patent · 2025</p><h3>Tuple-Loss Constrained GAN Inversion</h3><p>A tuple-loss constraint for generative model inversion, supporting reconstruction accuracy and identity-specific feature preservation.</p><p class="patent-number">CN 118470193 B <span aria-hidden="true">/</span> <a href="assets/patent-preview.png">Patent record <span aria-hidden="true">↗</span></a></p></article>
+      <div class="background-grid"><div><h3>Selected honors</h3><ul class="plain-list"><li>Huawei ICT Innovation Competition · National Second Prize</li><li>North China Computer Application Contest · Third Prize</li><li>Electronic Design Contest · Tianjin Second Prize</li><li>Tianjin University Merit Student · Twice</li></ul></div><div><h3>Engineering background</h3><p>Python, PyTorch, MATLAB, Swift, Flutter, C/C++, and LaTeX. Experience connecting model development with reproducible experiments and usable software.</p><p class="membership">IEEE Student Member</p></div></div>
+    </section>
+    <footer class="site-footer"><p>Jialin Li · <span data-year>2026</span></p><a href="mailto:lijialin_3737@tju.edu.cn">Get in touch <span aria-hidden="true">↗</span></a></footer>
+  </main>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Jialin Li","alternateName":"李佳林","url":"https://wonderland.plus/","jobTitle":"PhD Student","affiliation":{"@type":"CollegeOrUniversity","name":"Tianjin University"},"sameAs":["https://scholar.google.com/citations?user=gbTe0zUAAAAJ","https://github.com/LiJialin001","https://orcid.org/0009-0007-2608-1565"]}</script>
+</body>
 </html>

@@ -1,0 +1,40 @@
+[
+  {
+    "id": "ot-bridge-editor", "shortTitle": "OT-Bridge Editor",
+    "title": "Geometrically Constrained Stenosis Editing in Coronary Angiography via Entropic Optimal Transport",
+    "authors": ["Jialin Li", "Zhuo Zhang", "Yue Cao", "Guipeng Lan", "Jiabao Wen", "Shuai Xiao", "Jiachen Yang"],
+    "year": 2026, "venue": "ICML", "role": "First author", "topic": "Controllable image editing",
+    "summary": "Geometry-constrained image editing through entropic optimal transport and a guided Schrödinger bridge. Synthetic augmentation improves detection on held-out real angiograms.",
+    "image": "assets/ot-bridge-overview.png", "imageAlt": "OT-Bridge Editor: structural conditioning, constrained transport, and geometry-guided output",
+    "project": "projects/ot-bridge-editor/",
+    "links": [{"label":"Paper","url":"https://arxiv.org/abs/2605.08851"},{"label":"Code","url":"https://github.com/LiJialin001/OT-Bridge-Editor"}],
+    "affiliation": "School of Electrical and Information Engineering, Tianjin University",
+    "citation": "@article{li2026geometrically,\n  title={Geometrically Constrained Stenosis Editing in Coronary Angiography via Entropic Optimal Transport},\n  author={Li, Jialin and Zhang, Zhuo and Cao, Yue and Lan, Guipeng and Wen, Jiabao and Xiao, Shuai and Yang, Jiachen},\n  journal={arXiv preprint arXiv:2605.08851},\n  year={2026},\n  note={Accepted to ICML 2026},\n  doi={10.48550/arXiv.2605.08851},\n  url={https://arxiv.org/abs/2605.08851}\n}"
+  },
+  {
+    "id": "vdsb-gwsyn", "shortTitle": "VDSB-GWSyn",
+    "title": "VDSB-GWSyn: Diffusion Schrodinger Bridge for Controllable and Anatomically Feasible Guidewire Synthesis in Coronary Angiography",
+    "authors": ["Haoyuan Tang", "Zhuo Zhang", "Jialin Li", "Shuai Xiao", "Jiachen Yang"],
+    "year": 2026, "venue": "MICCAI", "role": "Co-author", "topic": "Structured data synthesis",
+    "summary": "Controllable device synthesis with anatomical constraints and paired endpoint labels. Synthetic pre-training supports downstream endpoint localization.",
+    "image": "assets/vdsb-method-000.jpg", "imageAlt": "VDSB-GWSyn method diagram from the paper",
+    "links": [{"label":"Paper","url":"https://arxiv.org/abs/2606.00109"}]
+  },
+  {
+    "id": "automatic-translational-correction", "shortTitle": "Auto-Annotation & Multi-View Correction",
+    "title": "Automatic Translational Correction of Multi-View Coronary Angiography Based on Auto-Annotation Data Generation",
+    "authors": ["Yue Cao", "Zhuo Zhang", "Shuai Xiao", "Jialin Li", "Guipeng Lan", "Jiabao Wen", "Jiachen Yang"],
+    "year": 2026, "venue": "AAAI", "role": "Co-author", "topic": "Synthetic supervision",
+    "summary": "Auto-annotated synthetic image pairs connect generative modeling with matching and multi-view geometric correction.",
+    "image": "assets/aaai-atc-method.png", "imageAlt": "Image generation, automatic keypoint labels, matching, and translational correction pipeline",
+    "links": [{"label":"Paper","url":"https://doi.org/10.1609/aaai.v40i4.37253"},{"label":"Code","url":"https://github.com/CaoYue2004/AutomaticTranslationalCorrection"}]
+  },
+  {
+    "id": "dd-mid", "shortTitle": "DD-MID",
+    "title": "DD-MID: An Innovative Approach to Assess Model Information Discrepancy Based on Deep Dream",
+    "authors": ["Zhuo Zhang", "Jialin Li", "Shuai Xiao", "Haoyu Li", "Jiabao Wen", "Wen Lu", "Jiachen Yang", "Xinbo Gao"],
+    "year": 2025, "venue": "ESWA", "role": "Second author", "topic": "Model understanding",
+    "summary": "Dataset-independent comparison of model information using Deep Dream, with applications to model evaluation and interpretability.",
+    "links": [{"label":"Paper","url":"https://doi.org/10.1016/j.eswa.2025.127207"}]
+  }
+]
